@@ -59,3 +59,4 @@ group :test do
 end
 
 gem 'sorcery'
+gem "importmap-rails"
