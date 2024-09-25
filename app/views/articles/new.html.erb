@@ -1,0 +1,18 @@
+<div class="mt-8">
+  <div class="w-10/12 mx-auto md:max-w-md">
+  <h1>コーデを投稿しよう！</h1>
+    <%= form_with model: @article do |f| %>
+    <div class="mb-3">
+        <%= f.label :title %>
+    <%= f.text_field :title, class: 'w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-pink-500 placeholder-gray-500 placeholder-opacity-50' %>
+    </div>
+    <div class="mb-3">
+    <%= f.label :oshi_point %>
+    <%= f.text_area :oshi_point, class: 'w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-pink-500 placeholder-gray-500 placeholder-opacity-50' %>
+    </div>
+    <button class="bg-gray-400 hover:bg-gray-600 text-white rounded px-4 py-2">
+        <%= f.submit "投稿" %>
+    </button>
+    <% end %>
+    </div>
+</div>

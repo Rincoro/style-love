@@ -17,4 +17,8 @@ class UserSessionsController < ApplicationController
     logout
     redirect_to root_path, status: :see_other
   end
+
+  def user_params
+    params.require(:user).permit(:email, :password )
+  end
 end

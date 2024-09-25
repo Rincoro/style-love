@@ -57,6 +57,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-
+gem 'rails-i18n'
 gem 'sorcery'
 gem "importmap-rails"
