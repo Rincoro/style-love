@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
   def index
   end
 private
-  def user_params
+  def article_params
     params.require(:article).permit(:title, :image, :category, :oshi_point)
   end
 end
