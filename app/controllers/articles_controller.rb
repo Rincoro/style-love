@@ -6,9 +6,11 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
+      flash[:success] = "投稿に成功しました"
       redirect_to root_path
     else
-      render :new
+      flash[:alert] = "投稿に失敗しました"
+      render :new, status: :unprocessable_entity
     end
   end
 
