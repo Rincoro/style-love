@@ -11,23 +11,23 @@
     <%= f.text_area :oshi_point, class: 'w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-pink-500 placeholder-gray-500 placeholder-opacity-50' %>
     </div>
     <div class="mb-3">
-    <%= f.radio_button :category, Article.categories.key(3) %>
-    <%= f.label :category, Article.categories_i18n[:idol] %>
+      <%= f.radio_button :category, Article.categories.key(3) %>
+      <%= f.label t("articles.create.idol") %>
     </div>
     <div class="mb-3">
-    <%= f.radio_button :category, Article.categories.key(1) %>
-    <%= f.label :category, Article.categories_i18n[:stage] %>
+      <%= f.radio_button :category, Article.categories.key(1) %>
+      <%= f.label t("articles.create.stage") %>
     </div>
     <div class="mb-3">
-    <%= f.radio_button :category, Article.categories.key(2) %>
-    <%= f.label :category, Article.categories_i18n[:voice_actor]%>
+      <%= f.radio_button :category, Article.categories.key(2) %>
+      <%= f.label t("articles.create.voice_actor") %>
     </div>
     <div class="mb-3">
-    <%= f.radio_button :category, Article.categories.key(0) %>
-    <%= f.label :category, Article.categories_i18n[:other] %>
+      <%= f.radio_button :category, Article.categories.key(0) %>
+      <%= f.label t("articles.create.other") %>
     </div>
     <button class="bg-gray-400 hover:bg-gray-600 text-white rounded px-4 py-2">
-        <%= f.submit "投稿" %>
+      <%= f.submit "投稿" %>
     </button>
     <% end %>
     </div>
