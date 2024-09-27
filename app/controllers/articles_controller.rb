@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
  
   def create
     @article = Article.new(article_params)
+    @article.user_id = current_user.id
     if @article.save
       flash[:success] = "投稿に成功しました"
       redirect_to root_path
@@ -19,6 +20,6 @@ class ArticlesController < ApplicationController
   end
 private
   def article_params
-    params.require(:article).permit(:title, :image, :category, :oshi_point)
+    params.require(:article).permit(:title, :images, :category, :oshi_point)
   end
 end
