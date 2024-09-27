@@ -1,6 +1,6 @@
 <div class="col-6 col-md-3 mb-4"> 
 <div class="group relative flex h-96 items-end overflow-hidden rounded-lg bg-gray-100 p-4 shadow-lg">
-    <%= image_tag  article.image, class: "absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" %>
+    <%= image_tag  article.images.first, class: "absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" %>
   <div class="flex flex-col">
     <div class="text-gray-500">
     <%= article.title %>
