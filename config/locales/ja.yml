@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    enums:
+      article:
+        categories:
+          idol: "アイドル"
+          stage: "舞台"
+          voice_actor: "声優"
+          other: "その他"

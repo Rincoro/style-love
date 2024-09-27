@@ -60,3 +60,4 @@ end
 gem 'rails-i18n'
 gem 'sorcery'
 gem "importmap-rails"
+gem 'enum_help'

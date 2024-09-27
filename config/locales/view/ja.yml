@@ -17,6 +17,12 @@ ja:
     new:
       title: ユーザー登録
       to_login_page: ログインページへ
+  articles:
+    create:
+      idol: アイドル
+      stage: 舞台
+      voice_actor: 声優
+      other: その他
   header:
     login: ログイン
     logout: ログアウト

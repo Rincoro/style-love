@@ -8,3 +8,14 @@ ja:
         name: ユーザー名
         password: パスワード
         password_confirmation: パスワード確認
+      article:
+        title: タイトル
+        oshi_point: 推しPOINT
+        category: カテゴリー
+    enums:
+      article:
+        category:
+          idol: "アイドル"
+          stage: "舞台"
+          voice_actor: "声優"
+          other: "その他"
