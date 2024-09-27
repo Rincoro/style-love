@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
+    @articles = Article.all.includes(:user).order(created_at: :desc)
   end
 private
   def article_params
