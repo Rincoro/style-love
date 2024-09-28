@@ -1,12 +1,13 @@
-<div class="col-6 col-md-3 mb-4"> 
-<div class="group relative flex h-96 items-end overflow-hidden rounded-lg bg-gray-100 p-4 shadow-lg">
-    <%= image_tag  article.images.first, class: "absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" %>
+<div>
+  <div class="group mb-2 block h-96 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:mb-3">
+    <%= image_tag  article.images.first, class: "h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" %>
+  </div>
   <div class="flex flex-col">
-    <div class="text-gray-500">
-    <%= article.title %>
+    <span class="text-gray-500">
+      <%= article.title %>
+    </span>
+    <div class="text-lg font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-xl">
+      <%= article.user.name %>
     </div>
-    <div class="text-gray-500">
-    <%= article.user.name %>
-    </div>
-    </div>
- </div>
+  </div>
+</div>
