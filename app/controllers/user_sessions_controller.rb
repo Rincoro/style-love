@@ -20,6 +20,7 @@ class UserSessionsController < ApplicationController
     redirect_to root_path, status: :see_other, alert: "ログアウトしました"
   end
 
+  private
   def user_params
     params.require(:user).permit(:email, :password )
   end
