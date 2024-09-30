@@ -9,7 +9,9 @@ delete 'logout', to: 'user_sessions#destroy'
   get "up" => "rails/health#show", as: :rails_health_check
   resources :users, only: %i[new create]
 
-  resources :articles,  only: %i[index new create]
+  resources :articles,  only: %i[index new create show] do
+    resources :attachments, controller: 'articles/attachments', only: %i[destroy]
+  end
   # Render dynamic PWA files from app/views/pwa/*
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest

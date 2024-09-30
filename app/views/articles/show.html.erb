@@ -1,0 +1,19 @@
+<h1>詳細ページ</h1>
+<div class="flex gap-4">
+  <div class="flex-shrink-0">
+    <% if @article.images.attached? %>
+      <div class="m-6">
+        <% @article.images.each do |image| %>
+          <%= image_tag image, class: "rounded object-cover object-center", size: "600x200" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="flex flex-col justify-center">
+    <h2 class="text-4xl font-bold text-gray-800 lg:text-5xl">
+      <%= @article.title %>
+    </h2>
+    <p><%= @article.created_at %></p>
+    <%= link_to "Tweet一覧に戻る", articles_path %>
+  </div>
+</div>
