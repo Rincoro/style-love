@@ -17,14 +17,16 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     <%= javascript_include_tag "turbo", type: "module" %>
   </head>
-  <body>
+  <body class = "flex flex-col min-h-screen" >
     <% if logged_in? %>
     <%= render 'shared/header' %>
     <% else %>
     <%= render 'shared/before_login_header' %>
     <% end %>
      <%= render 'shared/flash_message' %>
+    <main class="mb-auto">
     <%= yield %>
+    </main>
     <%= render 'shared/footer' %>
   </body>
 </html>
