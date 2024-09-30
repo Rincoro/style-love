@@ -1,5 +1,5 @@
 
-class article::AttachmentsController < ApplicationController
+class Article::AttachmentsController < ApplicationController
     def destroy
       image = ActiveStorage::Attachment.find(params[:id])
       image.purge
