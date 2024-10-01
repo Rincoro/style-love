@@ -20,4 +20,27 @@
     <% end %>
     <%= link_to "Tweet一覧に戻る", articles_path %>
   </div>
+
+  <!-- コメントフォーム -->
+  <div class="row mb-3" >
+    <div class="col-lg-8 offset-lg-2">
+    <%= render "articles/form", article: @article, comment:  Comment.new %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <table class="table">
+      <tbody id="table-comment">
+        <% if @comments.present? %>
+        <% @comments.each do |comment| %>
+          <%= render 'articles/comment', comment: comment %>
+        <% end %>
+        <% else %>
+          <div class="mb-3"></div>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

@@ -23,6 +23,8 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @comment = Comment.new
+    @comments = @article.comments.all.includes(:user).order(created_at: :desc)
   end
 
   def edit
@@ -54,6 +56,6 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :category, :oshi_point, images:[])
+      params.require(:article).permit(:title, :category, :oshi_point, :body, images:[])
     end
   end
