@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
   belongs_to :user 
+  has_many :comments, dependent: :destroy
   validates :title, presence: true
   validates :oshi_point, presence: true, length: { maximum: 255 }
   has_many_attached :images

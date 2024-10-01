@@ -1,0 +1,5 @@
+
+<%= form_with model: [article, comment], url: article_comments_path(article), local: false do |f| %>
+    <%= f.text_area :body, rows:'5', placeholder: "コメントをここに", class: "w-100" %>
+    <%= f.submit "送信" %>
+  <% end %>
