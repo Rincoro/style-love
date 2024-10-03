@@ -12,4 +12,8 @@ class User < ApplicationRecord
   def my_article?(article)
     self == article.user
   end
+
+  def my_comment?(comment)
+    self == comment.user
+  end
 end
