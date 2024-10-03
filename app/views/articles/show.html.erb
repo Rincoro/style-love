@@ -1,4 +1,4 @@
-<h1>詳細ページ</h1>
+<%= link_to "一覧に戻る", articles_path %>
 <div class="flex gap-4">
   <div class="flex-shrink-0">
     <% if @article.images.attached? %>
@@ -15,32 +15,29 @@
     </h2>
     <p><%= @article.created_at %></p>
     <% if current_user.my_article?(@article) %>
-        <%= link_to "編集", edit_article_path(@article) %>
+        <%= link_to "編集", edit_article_path(@article.id) %>
         <%= link_to "削除", article_path(@article), data: { turbo_method: :delete, turbo_confirm: '削除してもいいですか？' }%>
     <% end %>
-    <%= link_to "Tweet一覧に戻る", articles_path %>
-  </div>
 
   <!-- コメントフォーム -->
-  <div class="row mb-3" >
-    <div class="col-lg-8 offset-lg-2">
+  <div class="row mb-3" id="comment-form" >
+    <div class="col-lg-8 offset-lg-2 flex items-center space-x-2">
     <%= render "articles/form", article: @article, comment:  Comment.new %>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-lg-8 offset-lg-2">
-      <table class="table">
-      <tbody id="table-comment">
-        <% if @comments.present? %>
-        <% @comments.each do |comment| %>
-          <%= render 'articles/comment', comment: comment %>
-        <% end %>
-        <% else %>
-          <div class="mb-3"></div>
-        <% end %>
-        </tbody>
-      </table>
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <table class="table">
+          <% if @comments.present? %>
+          <% @comments.each do |comment| %>
+            <%= render 'articles/comment', comment: comment %>
+          <% end %>
+          <% else %>
+            <div class="mb-3"></div>
+          <% end %>
+        </table>
+      </div>
     </div>
   </div>
 </div>

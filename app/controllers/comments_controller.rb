@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
   end
  
   def update
-    @article = Article.find(params[article_id])
+    @article = Article.find(params[:article_id])
     @comment = current_user.comments.find(params[:id])
     if @comment.update(comment_params)
       flash[:success] = "コメントの編集に成功しました"
@@ -32,7 +32,12 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = current_user.comments.find(params[:id])
-    @comment.destroy!
+    @comment.destroy
+
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to article_path(@article.id), notice: 'Comment was successfully destroyed.' }
+    end
   end
  
 

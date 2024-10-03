@@ -1,4 +1,19 @@
-<h3 class="small"><%=  comment.user.name %></h3>
-    <p><%= comment.body %></p>
 
-あああ
+<div id= "comment-<%=comment.id%>" >
+    <div class = "border-b m-3" id = "table-comment" >
+      <h3><%=  "＜#{comment.user.name}＞" %></h3>
+      <div class="flex justify-between items-center">
+        <div class = "mt-2">
+          <%= comment.body %>
+        </div>
+        <% if current_user.my_comment?(comment) %>
+          <div class="space-x-2">
+            <%= link_to '編集', edit_comment_path(comment), class: 'text-blue-500 hover:underline py-1.5 px-4 transition-colors bg-gray-50 border active:bg-gray-200 font-medium border-gray-200 text-gray-900 rounded-lg hover:bg-gray-100 disabled:opacity-50' %>
+            <%= link_to '削除', comment_path(comment), class: 'text-blue-500 hover:underline py-1.5 px-4 transition-colors bg-gray-50 border active:bg-gray-200 font-medium border-gray-200 text-gray-900 rounded-lg hover:bg-gray-100 disabled:opacity-50', data: { turbo_method: :delete, turbo_confirm: '削除してもいいですか？' } %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+

@@ -1,0 +1,12 @@
+<% if @comment.errors.present? %>
+  <%= turbo_stream.replace "comment-form" do %>
+    <%= render 'articles/form', comment: @comment, article: @article  %>
+  <% end %>
+<% else %>
+  <%= turbo_stream.prepend "table-comment" do %>
+    <%= render 'article/comment', comment: @comment %>
+  <% end %>
+  <%= turbo_stream.replace "comment-form" do %>
+    <%= render 'article/form', comment: Comment.new, article: @article %>
+  <% end %>
+<% end %>
