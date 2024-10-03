@@ -15,17 +15,20 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = current_user.comments.find(params[:id])
+    respond_to do |format|
+      format.html { render "comments/form_edit", locals: { comment: @comment } } 
+    end
   end
  
   def update
-    @article = Article.find(params[:article_id])
     @comment = current_user.comments.find(params[:id])
     if @comment.update(comment_params)
-      flash[:success] = "コメントの編集に成功しました"
-      redirect_to articles_path
+      respond_to do |format|
+        format.turbo_stream # Turbo Streamレスポンスを返す
+        format.html { redirect_to articles_path, notice: 'コメントが更新されました。' }
+      end
     else
-      flash[:alert] = "コメントの編集に失敗しました"
-      redirect_to article_path(@article.id), status: :unprocessable_entity
+      # エラーハンドリング
     end
   end
 
