@@ -1,7 +1,7 @@
 <div>
   <div class="group mb-2 block h-96 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:mb-3">
-  <% if article.images.attached? %>
-    <%= image_tag article.images.first, class: "h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" %>
+  <% if article.image.attached? %>
+    <%= image_tag article.image, class: "h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" %>
   <% end %> 
   </div>
   <div class="flex flex-col">
