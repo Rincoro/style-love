@@ -25,21 +25,23 @@ class CommentsController < ApplicationController
     if @comment.update(comment_params)
       respond_to do |format|
         format.turbo_stream # Turbo Streamレスポンスを返す
-        format.html { redirect_to articles_path, notice: 'コメントが更新されました。' }
       end
     else
-      # エラーハンドリング
+      flash[:alert] = "更新に失敗しました"
+      redirect_to article_path(@comment.article_id), status: :unprocessable_entity
     end
   end
 
 
   def destroy
     @comment = current_user.comments.find(params[:id])
-    @comment.destroy
-
-    respond_to do |format|
-      format.turbo_stream
-      format.html { redirect_to article_path(@article.id), notice: 'Comment was successfully destroyed.' }
+    if @comment.destroy
+      respond_to do |format|
+        format.turbo_stream
+      end
+    else
+      flash[:alert] = "削除に失敗しました"
+      redirect_to article_path(@comment.article_id), status: :unprocessable_entity
     end
   end
  
