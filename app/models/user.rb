@@ -14,8 +14,8 @@ class User < ApplicationRecord
   end
 
   def can_edit?(article)
-    return false unless self # selfがnilなら、未ログインと判断してfalseを返す
-    my_article?(article)
+  return false unless self # selfがnilなら、未ログインと判断してfalseを返す
+  my_article?(article)
   end
 
   def my_comment?(comment)
