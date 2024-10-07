@@ -1,0 +1,16 @@
+join {
+    display: flex; /* ボタンを横並びにする */
+    gap: 10px; /* ボタン間の隙間を設定 */
+  }
+  
+  .join-item {
+    padding: 10px 20px; /* ボタンの内側の余白 */
+    border: none; /* ボタンの枠線を消す */
+    background-color: lightgray; /* ボタンの背景色 */
+    cursor: pointer; /* マウスカーソルをポインタに変更 */
+  }
+  
+  .btn-active {
+    background-color: blue; /* アクティブなボタンの背景色 */
+    color: white; /* アクティブなボタンの文字色 */
+  }

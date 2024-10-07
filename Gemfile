@@ -63,3 +63,4 @@ gem "importmap-rails"
 gem 'enum_help'
 
 gem "image_processing", "~> 1.2"
+gem 'kaminari'

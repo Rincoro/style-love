@@ -35,3 +35,7 @@ ja:
     create_board: 掲示板作成
     bookmark_index: ブックマーク一覧
     profile: プロフィール
+  pagination:
+      first: 最初へ
+      previous: 前へ
+      next: 次へ
