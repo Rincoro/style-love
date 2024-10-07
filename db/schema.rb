@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_01_142106) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_07_123030) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,7 +45,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_01_142106) do
   create_table "articles", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "title"
-    t.string "image"
     t.integer "category"
     t.string "oshi_point"
     t.datetime "created_at", null: false
@@ -63,6 +62,19 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_01_142106) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "brand"
+    t.string "store_url"
+    t.integer "category", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "article_id", null: false
+    t.index ["article_id"], name: "index_items_on_article_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email", null: false
@@ -78,4 +90,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_01_142106) do
   add_foreign_key "articles", "users"
   add_foreign_key "comments", "articles"
   add_foreign_key "comments", "users"
+  add_foreign_key "items", "articles"
+  add_foreign_key "items", "users"
 end

@@ -33,6 +33,10 @@
     <%= f.file_field :image, class: "hidden", accept: 'image/png, image/jpeg' %>
     </label>
     </div>
+    <%= f.fields_for :items do |item| %>
+      <%= item.label :name, "アイテム名" %>
+      <%= item.text_field :name %>
+   <% end %>
     <button class="bg-gray-400 hover:bg-gray-600 text-white rounded px-4 py-2 m-3">
       <%= f.submit "投稿" %>
     </button>

@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @items = @article.items.new
   end
  
   def create
@@ -23,6 +24,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @items = @article.items.all.includes(:user).order(created_at: :desc)
     @comment = @article.comments.build
     @comments = @article.comments.all.includes(:user).order(created_at: :desc)
   end
@@ -56,6 +58,7 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :category, :oshi_point, :body, :image)
+      params.require(:article).permit(:title, :category, :oshi_point, :body, :image,
+      items_attributes:[:name, :category, :store_url, :brand, :images])
     end
   end
