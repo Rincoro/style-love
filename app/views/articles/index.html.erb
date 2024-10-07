@@ -5,6 +5,8 @@
         <div class="grid gap-x-4 gap-y-6 sm:grid-cols-2 md:gap-x-6 lg:grid-cols-4 xl:grid-cols-4 m-4">
           <%= render @articles %> 
         </div>
+        <div class="justify-center flex items-center space-x-2 m-2" >
+        <%= paginate @articles %>
         </div>
       <% else %>
         <p><%= t('articles.index.no_articles') %></p>
