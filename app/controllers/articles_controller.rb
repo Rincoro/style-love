@@ -24,7 +24,6 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @items = @article.items.all.includes(:user).order(created_at: :desc)
     @comment = @article.comments.build
     @comments = @article.comments.all.includes(:user).order(created_at: :desc)
   end

@@ -4,5 +4,5 @@ class Item < ApplicationRecord
   has_many_attached :images
   validates :name, presence: true
   validates :images, presence: true
-  enum category: { tops: 0, bottoms: 1, jacket: 2, allinone: 3, dress: 4, hear_accessory: 5, accessory: 6}
+  enum item_category: { tops: 0, bottoms: 1, jacket: 2, allinone: 3, dress: 4, hear_accessory: 5, accessory: 6}
 end
