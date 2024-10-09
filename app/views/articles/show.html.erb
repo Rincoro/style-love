@@ -12,8 +12,15 @@
     </h2>
     <p><%= @article.created_at %></p>
     <% if current_user.my_article?(@article) %>
+
+    <div class="flex flex-wrap gap-3 m-3">
+      <button type="button" class="flex h-8 w-12 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200">
         <%= link_to "編集", edit_article_path(@article.id) %>
+      </button>
+      <button type="button" class="flex h-8 w-12 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200">
         <%= link_to "削除", article_path(@article), data: { turbo_method: :delete, turbo_confirm: '削除してもいいですか？' }%>
+      </button>
+    </div>
     <% end %>
 
   <!-- コメントフォーム -->
