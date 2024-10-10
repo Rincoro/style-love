@@ -33,9 +33,82 @@
     <%= f.file_field :image, class: "hidden", accept: 'image/png, image/jpeg' %>
     </label>
     </div>
+    <div class="item-form-area">
+        <%= f.fields_for :items do |item| %>
+          <div class="item_form-group" data-index="<%= item.index %>">
+           <div class="mb-3">
+            <%= f.label :name %>
+            <%= item.text_field :name, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white"  %>
+            </div>
+          </div>
+          <div class="mb-3">
+            <%= item.label :brand, "ブランド" %>
+            <%= item.text_field :brand, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
+          </div>
+
+          <div class="mb-3">
+            <%= item.label :item_category, "カテゴリー" %>
+            <%= item.select :item_category, Item.item_categories_i18n.keys, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
+          </div>
+
+          <div class="mb-3">
+            <%= item.label :store_url, "商品サイトURL" %>
+            <%= item.text_field :store_url, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
+          </div>
+
+          <label class="mt-2 sm:mt-0 py-2 w-[180px] sm:w-[120px] h-8 bg-pink-300 text-white rounded-[3px] text-xs flex">
+            <span class="ml-5">アイテム画像</span>
+            <%= item.file_field :image, class: "hidden", accept: 'image/png, image/jpeg' %>
+          </label>
+        </div>
+      <% end %>
+        <button type="button" id="add-item-btn", class="bg-gray-400">+
+        </button>
       <button class="bg-gray-400 hover:bg-gray-600 text-white rounded px-4 py-2 m-3">
         <%= f.submit "投稿" %>
       </button>
+      </div>
     <% end %>
   </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const itemFormArea = document.querySelector(".item-form-area");
+    const addItemBtn = document.getElementById('add-item-btn');
+
+    addItemBtn.addEventListener('click', () => {
+        const newIndex = itemFormArea.querySelectorAll('.item_form-group').length;
+
+        const newGroup = document.createElement('div');
+        newGroup.className = 'item_form-group';
+        newGroup.dataset.index = newIndex;
+
+        newGroup.innerHTML = `
+          <div class="mb-3">
+              <label>名前</label>
+              <input type="text" name="items[${newIndex}][name]" class="block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded">
+          </div>
+          <div class="mb-3">
+              <label>ブランド</label>
+              <input type="text" name="items[${newIndex}][brand]" class="block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded">
+          </div>
+          <div class="mb-3">
+              <label>カテゴリー</label>
+              <select name="items[${newIndex}][item_category]" class="block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded">
+                <!-- カテゴリーの選択肢 -->
+              </select>
+          </div>
+          <div class="mb-3">
+              <label>商品サイトURL</label>
+              <input type="text" name="items[${newIndex}][store_url]" class="block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded">
+          </div>
+          <label>
+              アイテム画像
+              <input type="file" name="items[${newIndex}][image]" accept="image/png, image/jpeg" class="hidden">
+          </label>
+        `;
+
+        itemFormArea.appendChild(newGroup);
+    });
+});
