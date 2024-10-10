@@ -12,7 +12,7 @@ ja:
         title: タイトル
         oshi_point: 推しPOINT
         category: カテゴリー
-        images: コーデの写真
+        image: コーデの写真
     enums:
       article:
         category:
