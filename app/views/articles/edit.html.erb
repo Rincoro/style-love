@@ -1,7 +1,6 @@
-
 <div class="mt-8">
   <div class="w-10/12 mx-auto md:max-w-md">
-  <h1>編集する</h1>
+  <h1>編集</h1>
     <%= form_with model: @article do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="mb-3">
@@ -31,12 +30,48 @@
     <div class="mb-3">
     <label class="mt-2 sm:mt-0 py-2 w-[180px] sm:w-[120px] h-8  bg-pink-300 text-white rounded-[3px] text-xs flex ">
     <span class="ml-5">画像を選択する</span> 
-    <%= f.file_field :image, class: "hidden", accept: 'image/png, image/jpeg', multiple: true %>
+    <%= f.file_field :image, class: "hidden", accept: 'image/png, image/jpeg' %>
     </label>
     </div>
-    <button class="bg-gray-400 hover:bg-gray-600 text-white rounded px-4 py-2 m-3">
-      <%= f.submit "編集" %>
-    </button>
+    <div class="item-form-area bg-gray-200 m-2">
+        <%= f.fields_for :items do |item| %>
+          <%= item.hidden_field :id %>
+          <div class="item_form-group" data-index="<%= item.index %>">
+           <div class="mb-3">
+            <%= f.label :name %>
+            <%= item.text_field :name, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white"  %>
+            </div>
+          </div>
+          <div class="mb-3">
+            <%= item.label :brand, "ブランド" %>
+            <%= item.text_field :brand, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
+          </div>
+
+          <div class="mb-3">
+            <%= item.label :item_category, "カテゴリー" %>
+            <%= item.select :item_category, Item.item_categories_i18n.keys, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
+          </div>
+
+          <div class="mb-3">
+            <%= item.label :store_url, "商品サイトURL" %>
+            <%= item.text_field :store_url, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
+          </div>
+
+          <label class="mt-2 sm:mt-0 py-2 w-[180px] sm:w-[120px] h-8 bg-pink-300 text-white rounded-[3px] text-xs flex">
+            <span class="ml-5">アイテム画像</span>
+            <%= item.file_field :image, class: "hidden", accept: 'image/png, image/jpeg' %>
+          </label>
+        </div>
+      <% end %>
+        <button type="button" id="add-item-btn", class="bg-gray-400">+
+        </button>
+      <button class="bg-gray-400 hover:bg-gray-600 text-white rounded px-4 py-2 m-3">
+        <%= f.submit "編集" %>
+      </button>
+      </div>
     <% end %>
-    </div>
+  </div>
 </div>
+
+
+

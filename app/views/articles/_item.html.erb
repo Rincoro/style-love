@@ -1,0 +1,15 @@
+<div class = "border-b" >
+  <%= item.item_category %>
+  <%= item.name %>
+    <div class="shrink-0">
+      <div class="m-2">
+        <%= image_tag item.image, class: "rounded object-cover object-center", size: "600x200" %>
+         <div class="m-2 flex">
+        <%= item.brand %>
+        <% if item.store_url.present? %>
+        <%= link_to "購入元へ", item.store_url, target: "_blank", rel: "noopener noreferrer" %>
+        <%else%>
+        <%end%>
+      </div>
+    </div>
+</div>
