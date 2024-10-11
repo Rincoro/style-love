@@ -23,12 +23,12 @@
     </div>
     <% end %>
 
-  <!-- コメントフォーム -->
-  <div class="row mb-3" id="comment-form" >
-    <div class="col-lg-8 offset-lg-2 flex items-center space-x-2">
-    <%= render "articles/form", article: @article, comment:  Comment.new %>
+    <!-- コメントフォーム -->
+    <div class="row mb-3" id="comment-form" >
+      <div class="col-lg-8 offset-lg-2 flex items-center space-x-2">
+      <%= render "articles/form", article: @article, comment:  Comment.new %>
+      </div>
     </div>
-  </div>
 
     <div class="row">
       <div class="col-lg-8 offset-lg-2">
@@ -46,5 +46,18 @@
         </table>
       </div>
     </div>
+  </div>
+
+  <div class="flex-1 items-center justify-center m-20">
+    <table class="table">
+    <% if @items.present? %>
+    <% @items.each do |item| %>
+      <%= render 'articles/item', item: item %>
+    <% end %>
+    <% else %>
+      <div class="mb-3">
+      </div>
+    <% end %>
+    </table>
   </div>
 </div>

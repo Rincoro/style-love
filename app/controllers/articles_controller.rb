@@ -26,6 +26,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @comment = @article.comments.build
     @comments = @article.comments.all.includes(:user).order(created_at: :desc)
+    @items = @article.items.all.order(created_at: :desc)
   end
 
   def edit
@@ -58,6 +59,6 @@ class ArticlesController < ApplicationController
   private
     def article_params
       params.require(:article).permit(:title, :category, :oshi_point, :body, :image,
-      items_attributes:[:name, :item_category, :store_url, :brand, :image])
+      items_attributes:[ :id, :name, :item_category, :store_url, :brand, :image, :_destroy])
     end
   end
