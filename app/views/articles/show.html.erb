@@ -1,4 +1,4 @@
-<div class="flex gap-4 m-8">
+<div class="flex flex-col md:flex-row gap-4 m-4 md:m-8  lg:flex-row  lg:m-8 container">
   <div class="flex-shrink-0">
     <% if @article.image.attached? %>
       <div class="m-6">
@@ -47,9 +47,9 @@
       </div>
     </div>
   </div>
+  </div>
 
-  <div class="flex-1 items-center justify-center m-20">
-    <table class="table">
+    <table class="table m-8">
     <% if @items.present? %>
     <% @items.each do |item| %>
       <%= render 'articles/item', item: item %>
@@ -60,4 +60,3 @@
     <% end %>
     </table>
   </div>
-</div>

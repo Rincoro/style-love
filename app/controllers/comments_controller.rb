@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
     @comment.save
     if @comment.save
       flash[:success] = "コメントしました"
-      redirect_to article_path(@article.id)
     else
       flash[:alert] = "コメントに失敗しました"
       redirect_to article_path(@article.id), status: :unprocessable_entity

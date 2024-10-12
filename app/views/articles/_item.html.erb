@@ -1,15 +1,39 @@
-<div class = "border-b" >
-  <%= item.item_category %>
-  <%= item.name %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% if item.present? && item.image.attached? && item.name.present? %>
+<div class="border-b p-4 shadow-lg rounded max-w-lg mx-auto">
     <div class="shrink-0">
-      <div class="m-2">
-        <%= image_tag item.image, class: "rounded object-cover object-center", size: "600x200" %>
-         <div class="m-2 flex">
-        <%= item.brand %>
-        <% if item.store_url.present? %>
-        <%= link_to "購入元へ", item.store_url, target: "_blank", rel: "noopener noreferrer" %>
-        <%else%>
-        <%end%>
-      </div>
+        <h3 class="font-bold text-xl mb-2"><%= item.name%></h3>
+        <div class="text-md text-gray-700 mb-2">
+            <%= item.item_category %> - <%= item.name %>
+        </div>
+        <div class="m-2">
+            <%= image_tag item.image, class: "rounded-lg object-cover w-full h-48", size: "600x200" %>
+        </div>
+        <div class="m-2 flex items-center justify-between">
+            <span class="font-semibold"><%= item.brand %></span>
+            <% if item.store_url.present? %>
+                <%= link_to "購入元へ", item.store_url, target: "_blank", rel: "noopener noreferrer", class: "text-blue-500 hover:underline" %>
+            <% end %>
+        </div>
     </div>
-</div>
+  </div>
+<%end%>
