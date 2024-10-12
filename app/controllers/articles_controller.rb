@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
       if @article.update(article_params)
         flash[:success] = "投稿の編集に成功しました"
-        redirect_to articles_path
+        redirect_to article_path(@article)
       else
         flash[:alert] = "投稿の編集に失敗しました"
         render :edit, status: :unprocessable_entity

@@ -1,7 +1,6 @@
 <%= turbo_stream.prepend "table-comment" do %>
-  <%= render 'article/comment', comment: @comment %>
+  <%= render 'articles/comment', comment: @comment %>
 <% end %>
 <%= turbo_stream.replace "comment-form" do %>
-  <%= render 'article/form', comment: Comment.new, article: @article %>
-<% end %>
+  <%= render 'articles/form', comment: Comment.new, article: @article %>
 <% end %>
