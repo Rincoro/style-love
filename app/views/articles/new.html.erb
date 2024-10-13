@@ -1,71 +1,59 @@
 <div class="mt-8">
   <div class="w-10/12 mx-auto md:max-w-md">
-  <h1>コーデを投稿しよう！</h1>
-    <%= form_with model: @article do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-    <div class="mb-3">
-        <%= f.label :title %>
-    <%= f.text_field :title, class: 'w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-pink-500 placeholder-gray-500 placeholder-opacity-50' %>
-    </div>
-    <div class="mb-3">
-    <%= f.label :oshi_point %>
-    <%= f.text_area :oshi_point, class: "block w-full sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
-    </div>
-    <div class="mb-3">
-      <%= f.radio_button :category, Article.categories.key(3) %>
-      <%= f.label t("articles.create.idol") %>
-    </div>
-    <div class="mb-3">
-      <%= f.radio_button :category, Article.categories.key(1) %>
-      <%= f.label t("articles.create.stage") %>
-    </div>
-    <div class="mb-3">
-      <%= f.radio_button :category, Article.categories.key(2) %>
-      <%= f.label t("articles.create.voice_actor") %>
-    </div>
-    <div class="mb-3">
-      <%= f.radio_button :category, Article.categories.key(0) %>
-      <%= f.label t("articles.create.other") %>
-    </div>
-    <div class="mb-3">
-    <label class="mt-2 sm:mt-0 py-2 w-[180px] sm:w-[120px] h-8  bg-pink-300 text-white rounded-[3px] text-xs flex ">
-    <span class="ml-5">画像を選択する</span> 
-    <%= f.file_field :image, class: "hidden", accept: 'image/png, image/jpeg' %>
-    </label>
-    </div>
-    <div class="item-form-area bg-gray-200 m-2">
-        <%= f.fields_for :items do |item| %>
-          <div class="item_form-group" data-index="<%= item.index %>">
-           <div class="mb-3">
-            <%= f.label :name %>
-            <%= item.text_field :name, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white"  %>
-            </div>
-          </div>
-          <div class="mb-3">
-            <%= item.label :brand, "ブランド" %>
-            <%= item.text_field :brand, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
-          </div>
-
-          <div class="mb-3">
-            <%= item.label :item_category, "カテゴリー" %>
-            <%= item.select :item_category, Item.item_categories_i18n.keys, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
-          </div>
-
-          <div class="mb-3">
-            <%= item.label :store_url, "商品サイトURL" %>
-            <%= item.text_field :store_url, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
-          </div>
-
-          <label class="mt-2 sm:mt-0 py-2 w-[180px] sm:w-[120px] h-8 bg-pink-300 text-white rounded-[3px] text-xs flex">
-            <span class="ml-5">アイテム画像</span>
-            <%= item.file_field :image, class: "hidden", accept: 'image/png, image/jpeg' %>
-          </label>
-        </div>
-      <% end %>
-      <button class="bg-gray-400 hover:bg-gray-600 text-white rounded px-4 py-2 m-3">
-        <%= f.submit "投稿" %>
-      </button>
+    <h1>コーデを投稿しよう！</h1>
+      <%= form_with model: @article do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class="mb-3">
+          <%= f.label :title %>
+      <%= f.text_field :title, class: 'w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-pink-500 placeholder-gray-500 placeholder-opacity-50' %>
       </div>
+      <div class="mb-3">
+      <%= f.label :oshi_point %>
+      <%= f.text_area :oshi_point, class: "block w-full sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
+      </div>
+      <div class="mb-3">
+        <%= f.radio_button :category, Article.categories.key(3) %>
+        <%= f.label t("articles.create.idol") %>
+      </div>
+      <div class="mb-3">
+        <%= f.radio_button :category, Article.categories.key(1) %>
+        <%= f.label t("articles.create.stage") %>
+      </div>
+      <div class="mb-3">
+        <%= f.radio_button :category, Article.categories.key(2) %>
+        <%= f.label t("articles.create.voice_actor") %>
+      </div>
+      <div class="mb-3">
+        <%= f.radio_button :category, Article.categories.key(0) %>
+        <%= f.label t("articles.create.other") %>
+      </div>
+      <div class="mb-3">
+      <label class="mt-2 sm:mt-0 py-2 w-[180px] sm:w-[120px] h-8  bg-pink-300 text-white rounded-[3px] text-xs flex ">
+      <span class="ml-5">画像を選択する</span> 
+      <%= f.file_field :image, class: "hidden", accept: 'image/png, image/jpeg' %>
+      </label>
+      </div>
+
+      <div class="items">
+      <%= f.fields_for :items do |item| %>
+        <%= render "item_fields", f: item %>
+      <% end %>
+
+      <div class="add-botton-box">
+      <div class="col-10 mx-auto mt-2">
+        <%= link_to_add_association "+フォームを追加", f, :items,
+        class: "btn btn-secondary btn-block",
+        data: {
+        association_insertion_node: '#detail-association-insertion-point',
+        association_insertion_method: 'after'
+        }%>
+      </div>
+    </div>
+        <button class="bg-gray-400 hover:bg-gray-600 text-white rounded px-4 py-2 m-3">
+          <%= f.submit "投稿" %>
+        </button>
     <% end %>
   </div>
 </div>
+
+
