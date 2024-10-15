@@ -1,7 +1,8 @@
 // Entry point for the build script in your package.json
 //= require jquery
-
-//= require cocoon
+//= require @nathanvda/cocoon
+//= require ./src/cocoon
+import './cocoon'
 import "@hotwired/turbo-rails"
 import "./controllers"
-import './add_item';
+import './add_item'
