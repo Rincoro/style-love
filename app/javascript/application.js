@@ -5,4 +5,3 @@
 import './cocoon'
 import "@hotwired/turbo-rails"
 import "./controllers"
-import './add_item'
