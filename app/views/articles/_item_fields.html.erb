@@ -1,31 +1,38 @@
 
-<div class="item-form-area bg-gray-200 m-2">
-  <div class="mb-3">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white"  %>
+
+  <div class="nested-fields">
+    <div class="mb-3">
+    <div id="item-name">
+      <%= f.label :name %>
+      </div>
+      <%= f.text_field :name, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white item-name-input"  %>
+    </div>
+
+    <div class="mb-3">
+    <%= f.label :brand, "ブランド" %>
+    <%= f.text_field :brand, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
+    </div>
+
+    <div class="mb-3">
+    <%= f.label :item_category, "カテゴリー" %>
+    <%= f.select :item_category, Item.item_categories_i18n.keys, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
+    </div>
+
+    <div class="mb-3">
+    <%= f.label :store_url, "商品サイトURL" %>
+    <%= f.text_field :store_url, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
+    </div>
+
+    <label class="mt-2 sm:mt-0 py-2 w-[180px] sm:w-[120px] h-8 bg-pink-300 text-white rounded-[3px] text-xs flex">
+    <span class="ml-5">アイテム画像</span>
+    <%= f.file_field :image, class: "hidden", accept: 'image/png, image/jpeg' %>
+    </label>
+
+    <%= link_to_remove_association "削除", f %>
   </div>
 
-  <div class="mb-3">
-  <%= f.label :brand, "ブランド" %>
-  <%= f.text_field :brand, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
-  </div>
 
-  <div class="mb-3">
-  <%= f.label :item_category, "カテゴリー" %>
-  <%= f.select :item_category, Item.item_categories_i18n.keys, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
-  </div>
 
-  <div class="mb-3">
-  <%= f.label :store_url, "商品サイトURL" %>
-  <%= f.text_field :store_url, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
-  </div>
-
-  <label class="mt-2 sm:mt-0 py-2 w-[180px] sm:w-[120px] h-8 bg-pink-300 text-white rounded-[3px] text-xs flex">
-  <span class="ml-5">アイテム画像</span>
-  <%= f.file_field :image, class: "hidden", accept: 'image/png, image/jpeg' %>
-  </label>
-   <%="削除" %>
-</div>
 
 
 

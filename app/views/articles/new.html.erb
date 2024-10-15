@@ -35,25 +35,33 @@
       </div>
 
       <div class="items">
-      <%= f.fields_for :items do |item| %>
-        <%= render "item_fields", f: item %>
-      <% end %>
-
-      <div class="add-botton-box">
-      <div class="col-10 mx-auto mt-2">
-        <%= link_to_add_association "+フォームを追加", f, :items,
-        class: "btn btn-secondary btn-block",
-        data: {
-        association_insertion_node: '#detail-association-insertion-point',
-        association_insertion_method: 'after'
-        }%>
+        <div class="item-form-area bg-gray-200 m-2">
+          <%= f.fields_for :items do |item| %>
+            <%= render "item_fields", f: item %>
+          <% end %>
+        <div id="detail-association-insertion-point"></div>
       </div>
-    </div>
+      <div class="add-botton-box">
+        <%= link_to_add_association "アイテム追加", f, :items,
+        class: 'add_fields',
+        id: 'add-btn',
+        data: {
+          association_insertion_node: '#detail-association-insertion-point',
+          association_insertion_method: 'after'
+          }
+        %>
+      </div>
         <button class="bg-gray-400 hover:bg-gray-600 text-white rounded px-4 py-2 m-3">
           <%= f.submit "投稿" %>
         </button>
+        
     <% end %>
+        
+    </div> 
   </div>
 </div>
+
+
+      
 
 
