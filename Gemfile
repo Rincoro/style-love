@@ -67,3 +67,4 @@ gem 'kaminari'
 
 gem 'cocoon'
 gem "jquery-rails"
+gem 'aws-sdk-s3'

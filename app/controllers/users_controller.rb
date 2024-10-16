@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-       flash[:success] = "ユーザー登録に成功しました"
+      session[:user_id] = @user.id 
+      flash[:success] = "ユーザー登録に成功しました"
       redirect_to root_path
     else
       flash[:alert] = "ユーザー登録に失敗しました"
