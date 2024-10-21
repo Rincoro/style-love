@@ -11,6 +11,7 @@
       <%= f.label :oshi_point %>
       <%= f.text_area :oshi_point, class: "block w-full sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
       </div>
+      <h2>推しのジャンルを決めよう！</h2>
       <div class="mb-3">
         <%= f.radio_button :category, Article.categories.key(3) %>
         <%= f.label t("articles.create.idol") %>
@@ -27,6 +28,11 @@
         <%= f.radio_button :category, Article.categories.key(0) %>
         <%= f.label t("articles.create.other") %>
       </div>
+      <div class="mb-3">
+        <%= f.radio_button :category, Article.categories.key(3) %>
+        <%= f.label t("articles.create.idol") %>
+      </div>
+     <%= render "color", color: f %>
       <div class="mb-3">
       <label class="mt-2 sm:mt-0 py-2 w-[180px] sm:w-[120px] h-8  bg-pink-300 text-white rounded-[3px] text-xs flex ">
       <span class="ml-5">画像を選択する</span> 

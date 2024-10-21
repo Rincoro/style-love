@@ -58,7 +58,7 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :category, :oshi_point, :body, :image,
+      params.require(:article).permit(:title, :category, :oshi_point, :body, :image, :color,
       items_attributes:[ :id, :name, :item_category, :store_url, :brand, :image, :_destroy])
     end
   end
