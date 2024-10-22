@@ -1,59 +1,59 @@
 <h2>メンバーカラーも選択してね</h2>
 <div class="flex flex-wrap gap-3">
 <div class="mb-3">
-<%= color.radio_button :color, Article.colors.key(0), class: "peer" %>
-<%= color.label " ", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue-600 bg-red-500
+<%= color.radio_button :color, Article.colors.key(0),id:"red", class: "peer hidden" %>
+<%= color.label " ", for:"red", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue-600 bg-red-500
 peer-checked:border-blue-600" %>
 </div>
 <div class="mb-3">
-  <%= color.radio_button :color, Article.colors.key(1), class: "peer" %>
-  <%= color.label " ", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue-600 bg-pink-300
+  <%= color.radio_button :color, Article.colors.key(1),id:"pink", class: "peer hidden" %>
+  <%= color.label " ", for:"pink", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue-600 bg-pink-300
 	peer-checked:border-blue-600" %>
 </div>
 <div class="mb-3">
-	<%= color.radio_button :color, Article.colors.key(2), class: "peer" %>
-	<%= color.label " ", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue-600 bg-blue-300
+	<%= color.radio_button :color, Article.colors.key(2),id:"blue", class: "peer hidden" %>
+	<%= color.label " ",for:"blue", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue-600 bg-blue-300
 	peer-checked:border-blue-600" %>
 </div>
 <div class="mb-3">
-<%= color.radio_button :color, Article.colors.key(3), id: "color_light_blue", class: "peer"  %>
-<%= color.label " ", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue-600 bg-blue-200
+<%= color.radio_button :color, Article.colors.key(3), id: "light_blue", class: "peer hidden"  %>
+<%= color.label " ", for:"light_blue", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue-600 bg-blue-200
  peer-checked:border-blue-600" %>
 </div>
 <div class="mb-3">
-    <%= color.radio_button :color, Article.colors.key(4) , class: "peer " %>
-    <%= color.label " ", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue-600 bg-yellow-300
+    <%= color.radio_button :color, Article.colors.key(4) ,id:"yellow",class: "peer hidden " %>
+    <%= color.label " ", for:"yellow", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue-600 bg-yellow-300
 		peer-checked:border-blue-600" %>
   </div>
 	<div class="mb-3">
-    <%= color.radio_button :color, Article.colors.key(5), class: "peer" %>
-    <%= color.label " ", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue-600 bg-green-500
+    <%= color.radio_button :color, Article.colors.key(5),id:"green", class: "peer hidden" %>
+    <%= color.label " ", for:"green", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue-600 bg-green-500
 		peer-checked:border-blue-600" %>
   </div>
 	<div class="mb-3">
-	<%= color.radio_button :color, Article.colors.key(6), class: "peer" %>
-	<%= color.label " ", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue bg-purple-300
+	<%= color.radio_button :color, Article.colors.key(6), id:"purple", class: "peer hidden" %>
+	<%= color.label " ", for:"purple", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue bg-purple-300
 	peer-checked:border-blue-600" %>
 </div>
 <div class="mb-3">
-<%= color.radio_button :color, Article.colors.key(7), class: "peer"  %>
-<%= color.label " ", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue bg-orange-400
+<%= color.radio_button :color, Article.colors.key(7), id:"orange",class:"peer hidden"  %>
+<%= color.label " ", for:"orange", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue bg-orange-400
 peer-checked:border-blue-600" %>
 </div>
 <div class="mb-3">
-    <%= color.radio_button :color, Article.colors.key(8), class: "peer"  %>
-    <%= color.label " ",  class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue-600 bg-black
+    <%= color.radio_button :color, Article.colors.key(8), id:"black", class: "peer hidden"  %>
+    <%= color.label " ", for:"black", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-transparent transition duration-300 ease-in-out hover:border-blue-600 bg-black
 		peer-checked:border-blue-600" %>
   </div>
 
 	<div class="mb-3">
-  <%= color.radio_button :color, Article.colors.key(9), class: "peer" %>
-  <%= color.label " ", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-gray-300 transition duration-300 ease-in-out hover:border-blue-600 bg-white 
+  <%= color.radio_button :color, Article.colors.key(9), id:"white", class: "peer hidden" %>
+  <%= color.label " ", for:"white", class: "flex items-center justify-center w-12 h-12 rounded-full cursor-pointer border-2 border-gray-300 transition duration-300 ease-in-out hover:border-blue-600 bg-white 
 	peer-checked:border-blue-600 " %>
 </div>
 
 	<div class="mb-3">
-    <%= color.radio_button :color, Article.colors.key(10), class: "peer" %>
+    <%= color.radio_button :color, Article.colors.key(10), id:"other", class: "peer" %>
     <%= color.label "その他", class: "flex items-center justify-center w-12 h-12 cursor-pointer border-2 border-transparent transition duration-300 " %>
   </div>
 </div>
