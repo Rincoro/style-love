@@ -15,7 +15,7 @@
 
     <div class="mb-3">
     <%= f.label :item_category %>
-    <%= f.select :item_category, Item.item_categories_i18n.keys, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
+    <%= f.select :item_category, Item.item_categories_i18n.map { |k, v| [v, k] }, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
     </div>
 
     <div class="mb-3">

@@ -1,12 +1,44 @@
 ja:
-  activerecord:
-    enums:
-      article:
-        categories:
+  enums:
+    article:
+      category:
           idol: "アイドル"
           stage: "舞台"
           voice_actor: "声優"
           other: "その他"
+      color:
+        red: "赤"
+        pink: "ピンク"
+        blue: "青"
+        light_blue: "水色"
+        yellow: "黄色"
+        green: "緑"
+        purple: "紫"
+        orange: "オレンジ"
+        black: "黒"
+        white: "白"
+        other_color: "その他"
+    item:
+     item_category:
+       tops: "トップス"
+       bottoms: "ボトムス"
+       jacket: "ジャケット"
+       allinone: "オールインワン"
+       dress: "ワンピース"
+       hear_accessory: "ヘアアクセサリー"
+       accessory: "アクセサリー"
+        
+
+        
+
+
+
+
+
+
+
+
+
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"

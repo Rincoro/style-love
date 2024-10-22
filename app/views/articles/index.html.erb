@@ -1,10 +1,4 @@
-<div class="row">
-<div class="flex   m-3">
-  <%= search_form_for @q, url: articles_path, class:"flex" do |f| %>
-    <%= f.search_field :title_or_oshi_point_or_user_name_cont, placeholder: 'キーワードから探す', class:'border-2 border-pink-500 rounded-full py-2 px-4 focus:outline-none focus:border-pink-700 transition duration-300' %>
-    <%= f.submit '検索', class: 'ml-2 bg-pink-500 text-white rounded-full py-2 px-6 hover:bg-pink-600 transition duration-300' %>
-  <% end %>
-  </div>
+<%= render "search", q: @q %>
   <div class="col-12">
       <% if @articles.present? %>
         <h2 class="text-2xl font-bold text-gray-800 m-3 ">みんなの推し活コーデ</h2>
