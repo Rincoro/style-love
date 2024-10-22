@@ -11,7 +11,7 @@ delete 'logout', to: 'user_sessions#destroy'
   resources :items
 
   resources :comments, only: %i[new create destroy edit update]
-  resources :articles,  only: %i[index new create show edit update destroy] do
+  resources :articles,  only: %i[index new create show edit update destroy search] do
     resources :comments, only: %i[new create destroy edit update]
     resources :attachments, controller: 'articles/attachments', only: %i[destroy]
   end
