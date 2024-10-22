@@ -10,7 +10,8 @@
     <h2 class="text-4xl font-bold text-gray-800 lg:text-5xl">
       <%= @article.title %>
     </h2>
-    <p><%= @article.created_at %></p>
+    <%= @article.oshi_point %>
+    <p><%=l @article.created_at, format: :short %></p>
     <% if current_user.my_article?(@article) %>
 
     <div class="flex flex-wrap gap-3 m-3">
@@ -47,8 +48,9 @@
       </div>
     </div>
   </div>
-  </div>
+</div>
 
+<div class ="grid gap-x-4 gap-y-6 sm:grid-cols-2 md:gap-x-6 lg:grid-cols-4 xl:grid-cols-4 m-4" >
     <table class="table m-8">
     <% if @items.present? %>
     <% @items.each do |item| %>
@@ -60,3 +62,4 @@
     <% end %>
     </table>
   </div>
+</div>

@@ -7,3 +7,6 @@ ja:
           stage: "舞台"
           voice_actor: "声優"
           other: "その他"
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
