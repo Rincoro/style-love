@@ -9,6 +9,10 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :name, presence: true, length: { maximum: 255 }
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["name"]  
+  end
+
   def my_article?(article)
     self == article.user
   end

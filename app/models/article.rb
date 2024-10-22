@@ -12,4 +12,11 @@ class Article < ApplicationRecord
   enum color: { red: 0, pink: 1, blue: 2, light_blue: 3, yellow: 4, green: 5, 
           purple: 6, orange: 7, black: 8, white: 9, other_color: 10 }
   accepts_nested_attributes_for :items ,allow_destroy: true
+  def self.ransackable_attributes(auth_object = nil)
+    ["category", "color", "created_at",  "oshi_point", "title"]
+  end
+
+  def self.ransackable_associations(_auth_object = nil)
+    ['user']
+  end
 end

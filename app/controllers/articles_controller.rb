@@ -2,7 +2,8 @@ class ArticlesController < ApplicationController
   skip_before_action :require_login, only: %i[index]
 
   def index
-    @articles = Article.all.includes(:user).order(created_at: :desc).page(params[:page]).per(8)
+    @q = Article.ransack(params[:q])
+    @articles = @q.result(distinct: true).includes(:user).page(params[:page]).order("created_at desc").per(8)
   end
 
   def new
@@ -58,7 +59,7 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :category, :oshi_point, :body, :image, :color,
+      params.require(:article).permit(:q,:title, :category, :oshi_point, :body, :image, :color,
       items_attributes:[ :id, :name, :item_category, :store_url, :brand, :image, :_destroy])
     end
   end

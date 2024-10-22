@@ -18,20 +18,3 @@ ja:
         brand: ブランド
         store_url: 商品の購入元URL
         item_category: カテゴリー
-    enums:
-      article:
-        category:
-          idol: "アイドル"
-          stage: "舞台"
-          voice_actor: "声優"
-          other: "その他"
-      item:
-        item_category:
-          tops: トップス
-          bottoms: ボトムス
-          jacket: ジャケット
-          allinone: オールインワン
-          dress: ワンピース
-          hear_accessory: ヘアアクセサリー
-          accessory: アクセサリー
-            
