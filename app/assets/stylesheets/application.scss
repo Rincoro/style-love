@@ -14,3 +14,6 @@ join {
     background-color: blue; /* アクティブなボタンの背景色 */
     color: white; /* アクティブなボタンの文字色 */
   }
+
+@import "bootstrap-sprockets";
+@import "bootstrap";

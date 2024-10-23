@@ -55,6 +55,10 @@ class ArticlesController < ApplicationController
       redirect_to article_path(@article), status: :unprocessable_entity
     end
   end
+
+  def bookmarks
+    @bookmarks = current_user.bookmark_articles.all.includes(:user).order(created_at: :desc).page(params[:page]).per(8)
+  end
  
 
   private

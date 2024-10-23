@@ -12,9 +12,15 @@ delete 'logout', to: 'user_sessions#destroy'
 
   resources :comments, only: %i[new create destroy edit update]
   resources :articles,  only: %i[index new create show edit update destroy search] do
+    collection do
+      get :bookmarks
+    end
     resources :comments, only: %i[new create destroy edit update]
     resources :attachments, controller: 'articles/attachments', only: %i[destroy]
   end
+
+  resources :bookmarks, only: %i[create destroy]
+  
   # Render dynamic PWA files from app/views/pwa/*
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
