@@ -39,3 +39,7 @@ ja:
       first: 最初へ
       previous: 前へ
       next: 次へ
+  bookmarks:
+    title: ブックマーク一覧
+    no_result: ブックマーク中の掲示板がありません。
+      

@@ -2,6 +2,7 @@ class Article < ApplicationRecord
   belongs_to :user 
   has_many :items, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
   validates :title, presence: true
   validates :oshi_point, presence: true, length: { maximum: 255 }
   has_one_attached :image
