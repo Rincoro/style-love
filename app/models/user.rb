@@ -10,9 +10,13 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :email, presence: true
   validates :name, presence: true, length: { maximum: 255 }
+  has_one_attached :icon
 
   def self.ransackable_attributes(auth_object = nil)
     ["name"]  
+  end
+
+  def my_profile
   end
 
   def my_article?(article)

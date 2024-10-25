@@ -20,6 +20,7 @@ delete 'logout', to: 'user_sessions#destroy'
   end
 
   resources :bookmarks, only: %i[create destroy]
+  resource :profile, only: %i[show edit update]
   
   # Render dynamic PWA files from app/views/pwa/*
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
