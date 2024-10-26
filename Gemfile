@@ -64,7 +64,7 @@ gem 'enum_help'
 
 gem "image_processing", "~> 1.2"
 gem 'kaminari'
-
+gem "mini_magick"
 
 gem 'cocoon'
 gem "jquery-rails"
