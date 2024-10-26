@@ -2,7 +2,7 @@
   <div class="flex-shrink-0">
     <% if @article.image.attached? %>
       <div class="m-6">
-        <%= image_tag @article.image, class: "rounded object-cover object-center", size: "600x200" %>
+        <%= image_tag @article.image_webp, class: "rounded object-cover object-center", size: "600x200" %>
       </div>
     <% end %>
   </div>
