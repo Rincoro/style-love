@@ -24,5 +24,4 @@ class Article < ApplicationRecord
   def image_webp
     image.variant(format: :webp).processed
   end
-
 end
