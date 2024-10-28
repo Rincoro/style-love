@@ -59,8 +59,7 @@ class ArticlesController < ApplicationController
   def bookmarks
     @bookmarks = current_user.bookmark_articles.all.includes(:user).order(created_at: :desc).page(params[:page]).per(8)
   end
- 
-
+  
   private
     def article_params
       params.require(:article).permit(:q,:title, :category, :oshi_point, :body, :image, :color,
