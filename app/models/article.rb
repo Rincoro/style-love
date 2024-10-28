@@ -20,4 +20,9 @@ class Article < ApplicationRecord
   def self.ransackable_associations(_auth_object = nil)
     ['user']
   end
+
+  def image_webp
+    image.variant(format: :webp).processed
+  end
+
 end

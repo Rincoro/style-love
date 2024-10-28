@@ -43,4 +43,8 @@ class User < ApplicationRecord
   def bookmark?(article)
     bookmark_articles.include?(article)
   end
+
+  def icon_webp
+    icon.variant(format: :webp).processed
+  end
 end

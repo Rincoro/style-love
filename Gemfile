@@ -69,3 +69,4 @@ gem 'cocoon'
 gem "jquery-rails"
 gem 'aws-sdk-s3'
 gem "ransack"
+gem "mini_magick"

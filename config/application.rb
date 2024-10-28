@@ -16,6 +16,8 @@ module Myapp
     config.autoload_lib(ignore: %w[assets tasks])
      config.time_zone = 'Tokyo'
 
+     config.active_storage.variant_processor = :mini_magick
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
