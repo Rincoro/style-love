@@ -2,9 +2,12 @@
   <div class="w-10/12 mx-auto md:max-w-md bg-white shadow-lg rounded-lg p-6">
 
   <div class="flex items-center justify-center mb-4">
+  <% if @user.icon.present? %>
     <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-pink-400"> <!-- ここでサイズを設定 -->
-      <%= image_tag @user.icon, class: 'w-full h-full object-cover' %> <!-- w-fullとh-fullで画像を調整 -->
+      <%= image_tag @user.icon_webp, class: 'w-full h-full object-cover' %> <!-- w-fullとh-fullで画像を調整 -->
     </div>
+    <% else%>
+    <%end%>
   </div>
     <div class="mb-4 p-4 border border-pink-300 rounded-lg bg-white"> <!-- 背景を白に変更 -->
       <h2 class="text-lg font-semibold text-pink-600">名前</h2>
