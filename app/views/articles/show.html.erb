@@ -1,56 +1,58 @@
-<div class="flex flex-col md:flex-row gap-4 m-4 md:m-8  lg:flex-row  lg:m-8 container">
-  <div class="flex-shrink-0">
+<div class="rounded max-w-lg mx-auto m-8 flex flex-col items-center">
+<div class="bg-white rounded-lg shadow-2xl overflow-hidden w-full">
     <% if @article.image.attached? %>
-      <div class="m-6">
-        <%= image_tag @article.image_webp, class: "rounded object-cover object-center", size: "600x200" %>
+      <div class="relative">
+        <%= image_tag @article.image_webp, class: "rounded-lg object-contain w-full h-48 m-3" %>
       </div>
     <% end %>
-  </div>
-  <div class="flex flex-col justify-center">
-    <h2 class="text-4xl font-bold text-gray-800 lg:text-5xl">
-      <%= @article.title %>
-    </h2>
-    <%= @article.oshi_point %>
-    <p><%=l @article.created_at, format: :short %></p>
-    <% if current_user.my_article?(@article) %>
-
-    <div class="flex flex-wrap gap-3 m-3">
-      <button type="button" class="flex h-8 w-12 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200">
-        <%= link_to "編集", edit_article_path(@article.id) %>
-      </button>
-      <button type="button" class="flex h-8 w-12 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200">
-        <%= link_to "削除", article_path(@article), data: { turbo_method: :delete, turbo_confirm: '削除してもいいですか？' }%>
-      </button>
-    </div>
-    <% end %>
-
-    <!-- コメントフォーム -->
-    <div class="row mb-3" id="comment-form" >
-      <div class="col-lg-8 offset-lg-2 flex items-center space-x-2">
-      <%= render "articles/form", article: @article, comment:  Comment.new %>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-8 offset-lg-2">
-        <table class="table">
-          <% if @comments.present? %>
-            <% @comments.each do |comment| %>
-              <%= turbo_frame_tag dom_id(comment) do %>
-              <%= render 'articles/comment', comment: comment %>
-              <%end%>
-            <% end %>
-          <% else %>
-            <div class="mb-3">
-            </div>
-          <% end %>
-        </table>
-      </div>
+    <div class="p-6">
+      <h2 class="text-5xl font-bold text-gray-800 mb-3">
+        <%= @article.title %>
+      </h2>
+      <p class="text-pink-600 mb-2 font-semibold"><%= @article.oshi_point %></p>
+      <p class="text-gray-500 mb-4"><%= l @article.created_at, format: :short %></p>
+      <% if current_user.my_article?(@article) %>
+        <div class="flex flex-wrap gap-3">
+          <button type="button" class="flex h-8 w-12 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200">
+          <%= link_to "編集", edit_article_path(@article.id), class: "w-full" %>
+          </button>
+          <button type="button" class="flex h-8 w-12 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200">
+          <%= link_to "削除", article_path(@article), data: { turbo_method: :delete, turbo_confirm: '削除してもいいですか？' }, class: "w-full" %>
+          </button>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
 
-<div class ="grid gap-x-4 gap-y-6 sm:grid-cols-2 md:gap-x-6 lg:grid-cols-4 xl:grid-cols-4 m-4" >
+
+    <!-- コメントフォーム -->
+    <div class="row m-8 justify-content-center" id="comment-form" >
+      <div class="m-8">
+      <%= render "articles/form", article: @article, comment:  Comment.new %>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2 ">
+          <div class="table-responsive">
+            <table class="table text-center mx-auto">
+              <% if @comments.present? %>
+                <% @comments.each do |comment| %>
+                  <%= turbo_frame_tag dom_id(comment) do %>
+                  <%= render 'articles/comment', comment: comment %>
+                  <%end%>
+                <% end %>
+              <% else %>
+                <div class="mb-3">
+                </div>
+              <% end %>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class ="grid gap-x-4 gap-y-6 sm:grid-cols-2 md:gap-x-6 lg:grid-cols-4 xl:grid-cols-4 m-4 " >
     <table class="table m-8">
     <% if @items.present? %>
     <% @items.each do |item| %>
