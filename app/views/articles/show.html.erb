@@ -27,17 +27,17 @@
 
 
     <!-- コメントフォーム -->
-    <div class="row m-8 justify-content-center" id="comment-form" >
-      <div class="m-8">
+    <div class="row m-8 justify-content-center" >
+      <div class="m-8", id="comment-form" >
       <%= render "articles/form", article: @article, comment:  Comment.new %>
       </div>
 
       <div class="row">
-        <div class="col-lg-8 offset-lg-2 ">
+        <div class="col-lg-8 offset-lg-2 ", id = "comment">
           <div class="table-responsive">
             <table class="table text-center mx-auto">
               <% if @comments.present? %>
-                <% @comments.each do |comment| %>
+                <% @comments.each do |comment|%>
                   <%= turbo_frame_tag dom_id(comment) do %>
                   <%= render 'articles/comment', comment: comment %>
                   <%end%>
