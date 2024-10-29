@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = current_user.comments.build(comment_params)
     @comment.article_id = @article.id
-    @comment.save
     if @comment.save
       flash[:success] = "コメントしました"
     else
