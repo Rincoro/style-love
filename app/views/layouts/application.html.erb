@@ -18,7 +18,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     <%= javascript_include_tag "turbo", type: "module" %>
   </head>
-  <body class = "flex flex-col min-h-screen" >
+  <body class = "flex flex-col min-h-screen bg-white" >
     <% if logged_in? %>
     <%= render 'shared/header' %>
     <% else %>
