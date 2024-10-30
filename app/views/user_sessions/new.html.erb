@@ -6,10 +6,10 @@
     </h1>
     <%= form_with model: @user  do |f| %>
         <%= f.label :email %>
-        <%= f.text_field :email, class: 'w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-pink-500 placeholder-gray-500 placeholder-opacity-50' %>
+        <%= f.text_field :email, class: 'w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-pink-500 placeholder-gray-500 placeholder-opacity-50 bg-white' %>
 
         <%= f.label :password %>
-        <%= f.text_field :password, class: 'w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-pink-500 placeholder-gray-500 placeholder-opacity-50' %>
+        <%= f.text_field :password, class: 'w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-pink-500 placeholder-gray-500 placeholder-opacity-50 bg-white' %>
 
       <button class="bg-gray-400 hover:bg-gray-600 text-white rounded px-4 py-2 m-3">
       <%= f.submit 'ログイン' %>

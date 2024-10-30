@@ -5,22 +5,22 @@
     <div id="item-name">
       <%= f.label :name %>
       </div>
-      <%= f.text_field :name, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white item-name-input"  %>
+      <%= f.text_field :name, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none bg-white item-name-input"  %>
     </div>
 
     <div class="mb-3">
     <%= f.label :brand %>
-    <%= f.text_field :brand, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
+    <%= f.text_field :brand, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none bg-white" %>
     </div>
 
     <div class="mb-3">
     <%= f.label :item_category %>
-    <%= f.select :item_category, Item.item_categories_i18n.map { |k, v| [v, k] }, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
+    <%= f.select :item_category, Item.item_categories_i18n.map { |k, v| [v, k] }, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none bg-white" %>
     </div>
 
     <div class="mb-3">
     <%= f.label :store_url %>
-    <%= f.text_field :store_url, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none focus:bg-white" %>
+    <%= f.text_field :store_url, class: "block sm:w-4/8 bg-white py-2 px-3 text-gray-800 border rounded focus:outline-none bg-white" %>
     </div>
     <div class="mb-3">
     <label class="mt-2 sm:mt-0 py-2 w-[180px] sm:w-[120px] h-8 bg-pink-300 text-white rounded-[3px] text-xs flex">
