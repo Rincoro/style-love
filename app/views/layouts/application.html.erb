@@ -17,6 +17,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     <%= javascript_include_tag "turbo", type: "module" %>
+    <%= display_meta_tags(default_meta_tags) %>
   </head>
   <body class = "flex flex-col min-h-screen bg-white" >
     <% if logged_in? %>
