@@ -5,11 +5,22 @@
         <%= image_tag @article.image_webp, class: "rounded-lg object-contain w-full h-48 m-3" %>
       </div>
     <% end %>
-    <div class="p-6">
-      <h2 class="text-5xl font-bold text-gray-800 mb-3">
+    <div class="p-6 ">
+      <h2 class="text-5xl font-bold text-gray-800 mb-3 flex justify-center ">
         <%= @article.title %>
       </h2>
-      <p class="text-pink-600 mb-2 font-semibold"><%= @article.oshi_point %></p>
+      <div class= "flex flex-col" >
+        <div class="flex items-center justify-center">
+          <% if @article.user.icon.attached? %>
+            <%= image_tag @article.user.icon, class: "h-10 w-10 rounded-full mr-2 " %>
+            <% else %>
+          <% end %>
+          <h2 class=" text-gray-800 mb-3 flex justify-center">
+            <%= @article.user.name %>
+          </h2>
+        </div>
+      </div>
+      <p class="text-gray-600 font-semibold m-3 mt-4"><%= @article.oshi_point %></p>
       <p class="text-gray-500 mb-4"><%= l @article.created_at, format: :short %></p>
       <% if current_user.my_article?(@article) %>
         <div class="flex flex-wrap gap-3">
