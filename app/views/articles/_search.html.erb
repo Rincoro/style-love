@@ -7,7 +7,7 @@
       { class: 'form-control mr-1 border-2 border-pink-300 rounded-full focus:outline-none focus:border-pink-500 bg-white' } %>
     </div>
   <div class="col-auto m-2">
-    <%= f.select :color_eq, Article.colors.keys.map.with_index { |k, i| [t("enums.article.color.#{k}"), i] },{ include_blank: "指定なし"},
+    <%= f.select :color_eq, Article.colors.keys.map.with_index { |k, i| [t("enums.article.color.#{k}"), i] },{ include_blank: "カラー" },
     { class: 'form-control  border-2 border-pink-300 rounded-full focus:outline-none focus:border-pink-500 bg-white ' } %>
   </div>
     <%= f.submit '検索', class: 'ml-2 bg-pink-500 text-white rounded-full py-2 px-6 hover:bg-pink-600 transition duration-300 m-2' %>
