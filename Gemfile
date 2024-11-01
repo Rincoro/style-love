@@ -45,6 +45,12 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+   # rubocop
+   gem "rubocop", require: false
+   gem "rubocop-performance", require: false
+   gem "rubocop-rails", require: false
+   gem "rubocop-rspec", require: false
 end
 
 group :development do
@@ -57,18 +63,20 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-gem 'rails-i18n'
-gem 'sorcery'
+gem "rails-i18n"
+gem "sorcery"
 gem "importmap-rails"
-gem 'enum_help'
+gem "enum_help"
 
 gem "image_processing", "~> 1.2"
+gem "kaminari"
+
 gem 'kaminari'
 gem "mini_magick"
 
-gem 'cocoon'
+gem "cocoon"
 gem "jquery-rails"
-gem 'aws-sdk-s3'
+gem "aws-sdk-s3"
 gem "ransack"
 gem "mini_magick"
 

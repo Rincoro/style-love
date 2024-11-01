@@ -5,6 +5,6 @@ class CreateBookmarks < ActiveRecord::Migration[7.2]
       t.references :article, foreign_key: true
       t.timestamps
     end
-    add_index :bookmarks, [:user_id, :article_id], unique: true
+    add_index :bookmarks, [ :user_id, :article_id ], unique: true
   end
 end

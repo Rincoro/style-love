@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   skip_before_action :require_login, only: %i[index,show]
-  
+
   def create
     @article = Article.find(params[:id])
     @item = Item.new(item_params)
@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
   def edit
     @item = Item.find(params[:id])
   end
-  
+
   def update
     @item = Item.find(params[:id])
       if @item.update(article_params)

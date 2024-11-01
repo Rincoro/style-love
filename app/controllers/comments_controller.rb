@@ -14,10 +14,10 @@ class CommentsController < ApplicationController
   def edit
     @comment = current_user.comments.find(params[:id])
     respond_to do |format|
-      format.html { render "comments/form_edit", locals: { comment: @comment } } 
+      format.html { render "comments/form_edit", locals: { comment: @comment } }
     end
   end
- 
+
   def update
     @comment = current_user.comments.find(params[:id])
     if @comment.update(comment_params)
@@ -42,7 +42,7 @@ class CommentsController < ApplicationController
       redirect_to article_path(@comment.article_id), status: :unprocessable_entity
     end
   end
- 
+
 
   private
     def comment_params

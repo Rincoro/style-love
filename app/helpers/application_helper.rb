@@ -11,28 +11,26 @@ module ApplicationHelper
 
   def default_meta_tags
     {
-      site: 'Style-LOVE',
-      title: '推し活のコーデ投稿サービス',
+      site: "Style-LOVE",
+      title: "推し活のコーデ投稿サービス",
       reverse: true,
-      charset: 'utf-8',
-      description: 'ライブや、推し活のコーデを共有し、自分のコーデの参考にすることができます。',
+      charset: "utf-8",
+      description: "ライブや、推し活のコーデを共有し、自分のコーデの参考にすることができます。",
       canonical: "https://style-love.net/",
-      separator: '|',
-      og:{
+      separator: "|",
+      og: {
         site_name: :site,
         title: :title,
         description: :description,
-        type: 'website',
+        type: "website",
         url: "https://style-love.net/",
-        image: image_url('Style-love (2).png'),
-        local: 'ja-JP'
+        image: image_url("Style-love (2).png"),
+        local: "ja-JP"
       },
       twitter: {
-        card: 'summary_large_image',
-        image: image_url('Style-love (2).png')
+        card: "summary_large_image",
+        image: image_url("Style-love (2).png")
       }
     }
   end
-  
-  
 end
