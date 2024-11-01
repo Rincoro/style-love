@@ -1,5 +1,4 @@
 class UserSessionsController < ApplicationController
-
   skip_before_action :require_login, only: %i[new create]
   def new; end
 
@@ -22,6 +21,6 @@ class UserSessionsController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :password )
+    params.require(:user).permit(:email, :password)
   end
 end

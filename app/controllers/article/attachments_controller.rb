@@ -5,4 +5,4 @@ class Article::AttachmentsController < ApplicationController
       image.purge
       redirect_to new_article_path
     end
-  end
+end

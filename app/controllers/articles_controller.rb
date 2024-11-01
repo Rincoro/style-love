@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
     @article = Article.new
     @item = @article.items.new
   end
- 
+
   def create
     @article = Article.new(article_params)
     @article.user_id = current_user.id
@@ -33,7 +33,7 @@ class ArticlesController < ApplicationController
   def edit
     @article = Article.find(params[:id])
   end
- 
+
   def update
     @article = Article.find(params[:id])
       if @article.update(article_params)
@@ -59,10 +59,10 @@ class ArticlesController < ApplicationController
   def bookmarks
     @bookmarks = current_user.bookmark_articles.all.includes(:user).order(created_at: :desc).page(params[:page]).per(8)
   end
-  
+
   private
     def article_params
-      params.require(:article).permit(:q,:title, :category, :oshi_point, :body, :image, :color,
-      items_attributes:[ :id, :name, :item_category, :store_url, :brand, :image, :_destroy])
+      params.require(:article).permit(:q, :title, :category, :oshi_point, :body, :image, :color,
+      items_attributes: [ :id, :name, :item_category, :store_url, :brand, :image, :_destroy ])
     end
-  end
+end

@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_one_attached :icon
 
   def self.ransackable_attributes(auth_object = nil)
-    ["name"]  
+    [ "name" ]
   end
 
   def my_profile
@@ -35,11 +35,11 @@ class User < ApplicationRecord
   def bookmark(article)
     bookmark_articles << article
   end
-  
+
   def unbookmark(article)
     bookmark_articles.destroy(article)
   end
-  
+
   def bookmark?(article)
     bookmark_articles.include?(article)
   end
