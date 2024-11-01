@@ -24,12 +24,12 @@ module ApplicationHelper
         description: :description,
         type: 'website',
         url: "https://style-love.net/",
-        image: image_url('Style-love (1).png'),
+        image: image_url('Style-love (2).png'),
         local: 'ja-JP'
       },
       twitter: {
         card: 'summary_large_image',
-        image: image_url('Style-love (1).png')
+        image: image_url('Style-love (2).png')
       }
     }
   end
