@@ -32,6 +32,13 @@ RSpec.describe "Articles", type: :system do
         expect(page).to have_text("コーデを投稿しよう！")
       end
     end
-  end
 
+    context 'コーデ詳細ぺージへ' do
+      it 'show' do
+        login(user)
+        visit article_path(article)
+        expect(page).to have_text("編集")
+      end
+    end
+  end
 end
