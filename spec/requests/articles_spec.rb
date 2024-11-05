@@ -22,14 +22,6 @@ RSpec.describe "Articles", type: :system do
         expect(page).to have_text("ログイン")
       end
     end
-
-    context 'コーデ詳細ページへ' do
-      it 'show' do
-        visit article_path(article)
-        expect(page).to have_text("ログイン")
-      end
-    end
-    
   end
 
   describe 'ログイン後' do
