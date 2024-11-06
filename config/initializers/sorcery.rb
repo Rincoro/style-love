@@ -230,7 +230,7 @@ Rails.application.config.sorcery.configure do |config|
   config.line.callback_url = 'https://style-love.net/oauth/callback?provider=line'
   config.line.scope = 'profile'
   config.line.bot_prompt = "aggressive"
-  config.line.user_info_mapping = {name: 'displayName', email: 'userId', line_user_id: 'userId'}
+  config.line.user_info_mapping = {name: 'displayName', email: 'userId' }
 
   # For information about Discord API
   # https://discordapp.com/developers/docs/topics/oauth2

@@ -16,7 +16,9 @@ class OauthsController < ApplicationController
          reset_session
          auto_login(@user)
          redirect_to root_path, :notice => "#{provider.titleize}でログインしました!"
-       rescue
+       rescue => e
+        logger.error e.message
+        logger.error e.backtrace.join("\n")
          redirect_to root_path, :alert => "#{provider.titleize}でログインに失敗しました"
        end
      end
