@@ -6,5 +6,4 @@ RSpec.describe Item, type: :model do
     expect(item).to be_valid
     expect(item.errors).to be_empty
   end
-  
 end

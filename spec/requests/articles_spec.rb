@@ -1,11 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "Articles", type: :system do
-
   before do
     driven_by(:rack_test)
   end
-  let!(:user) { build(:user)}
+  let!(:user) { build(:user) }
   let!(:article) { create(:article) }
   describe 'ログイン前' do
     context 'indexページにアクセス' do
@@ -15,7 +14,7 @@ RSpec.describe "Articles", type: :system do
       end
     end
 
-    
+
     context 'コーデ投稿ページへ' do
       it 'new_article_path' do
         visit new_article_path
@@ -29,7 +28,6 @@ RSpec.describe "Articles", type: :system do
         expect(page).to have_text("ログイン")
       end
     end
-    
   end
 
   describe 'ログイン後' do
@@ -50,4 +48,3 @@ RSpec.describe "Articles", type: :system do
     end
   end
 end
-

@@ -8,8 +8,8 @@ class Article < ApplicationRecord
   has_one_attached :image
 
   validates :image, presence: true
-  validates :color, presence: {message: "選択してください" }
-  validates :category, presence:  {message: "選択してください" }
+  validates :color, presence: { message: "選択してください" }
+  validates :category, presence:  { message: "選択してください" }
   enum category: { other: 0, stage: 1, voice_actor: 2, idol: 3 }
   enum color: { red: 0, pink: 1, blue: 2, light_blue: 3, yellow: 4, green: 5,
           purple: 6, orange: 7, black: 8, white: 9, other_color: 10 }

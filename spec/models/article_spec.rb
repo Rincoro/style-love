@@ -27,14 +27,14 @@ RSpec.describe Article, type: :model do
   it "category-presence true" do
     article = build(:article)
     article.category = nil
-    article.valid? 
+    article.valid?
     expect(article.errors[:category]).to include("選択してください")
   end
 
   it "color-presence true" do
     article = build(:article)
     article.color = nil
-    article.valid? 
+    article.valid?
     expect(article.errors[:color]).to include("選択してください")
   end
 end

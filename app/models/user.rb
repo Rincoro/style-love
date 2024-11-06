@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_one_attached :icon
 
 
-  has_many :authentications, :dependent => :destroy
+  has_many :authentications, dependent: :destroy
   accepts_nested_attributes_for :authentications
 
   def self.ransackable_attributes(auth_object = nil)
