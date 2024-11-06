@@ -85,3 +85,7 @@ gem "ransack"
 gem "mini_magick"
 
 gem "meta-tags"
+
+gem 'omniauth-auth0'
+gem 'omniauth-line'
+gem 'omniauth-rails_csrf_protection'
