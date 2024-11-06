@@ -4,82 +4,82 @@
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging,
 # :magic_login, :external
-Rails.application.config.sorcery.submodules = [:external]
+Rails.application.config.sorcery.submodules = [ :external ]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
-  # -- core --
-  # What controller action to call for non-authenticated users. You can also
-  # override the 'not_authenticated' method of course.
-  # Default: `:not_authenticated`
-  #
-  # config.not_authenticated_action =
+    # -- core --
+    # What controller action to call for non-authenticated users. You can also
+    # override the 'not_authenticated' method of course.
+    # Default: `:not_authenticated`
+    #
+    # config.not_authenticated_action =
 
-  # When a non logged-in user tries to enter a page that requires login, save
-  # the URL he wants to reach, and send him there after login, using 'redirect_back_or_to'.
-  # Default: `true`
-  #
-  # config.save_return_to_url =
+    # When a non logged-in user tries to enter a page that requires login, save
+    # the URL he wants to reach, and send him there after login, using 'redirect_back_or_to'.
+    # Default: `true`
+    #
+    # config.save_return_to_url =
 
-  # Set domain option for cookies; Useful for remember_me submodule.
-  # Default: `nil`
-  #
-  # config.cookie_domain =
+    # Set domain option for cookies; Useful for remember_me submodule.
+    # Default: `nil`
+    #
+    # config.cookie_domain =
 
-  # Allow the remember_me cookie to be set through AJAX
-  # Default: `true`
-  #
-  # config.remember_me_httponly =
+    # Allow the remember_me cookie to be set through AJAX
+    # Default: `true`
+    #
+    # config.remember_me_httponly =
 
-  # Set token randomness. (e.g. user activation tokens)
-  # The length of the result string is about 4/3 of `token_randomness`.
-  # Default: `15`
-  #
-  # config.token_randomness =
+    # Set token randomness. (e.g. user activation tokens)
+    # The length of the result string is about 4/3 of `token_randomness`.
+    # Default: `15`
+    #
+    # config.token_randomness =
 
-  # -- session timeout --
-  # How long in seconds to keep the session alive.
-  # Default: `3600`
-  #
-  # config.session_timeout =
+    # -- session timeout --
+    # How long in seconds to keep the session alive.
+    # Default: `3600`
+    #
+    # config.session_timeout =
 
-  # Use the last action as the beginning of session timeout.
-  # Default: `false`
-  #
-  # config.session_timeout_from_last_action =
+    # Use the last action as the beginning of session timeout.
+    # Default: `false`
+    #
+    # config.session_timeout_from_last_action =
 
-  # Invalidate active sessions. Requires an `invalidate_sessions_before` timestamp column
-  # Default: `false`
-  #
-  # config.session_timeout_invalidate_active_sessions_enabled =
+    # Invalidate active sessions. Requires an `invalidate_sessions_before` timestamp column
+    # Default: `false`
+    #
+    # config.session_timeout_invalidate_active_sessions_enabled =
 
-  # -- http_basic_auth --
-  # What realm to display for which controller name. For example {"My App" => "Application"}
-  # Default: `{"application" => "Application"}`
-  #
-  # config.controller_to_realm_map =
+    # -- http_basic_auth --
+    # What realm to display for which controller name. For example {"My App" => "Application"}
+    # Default: `{"application" => "Application"}`
+    #
+    # config.controller_to_realm_map =
 
-  # -- activity logging --
-  # Will register the time of last user login, every login.
-  # Default: `true`
-  #
-  # config.register_login_time =
+    # -- activity logging --
+    # Will register the time of last user login, every login.
+    # Default: `true`
+    #
+    # config.register_login_time =
 
-  # Will register the time of last user logout, every logout.
-  # Default: `true`
-  #
-  # config.register_logout_time =
+    # Will register the time of last user logout, every logout.
+    # Default: `true`
+    #
+    # config.register_logout_time =
 
-  # Will register the time of last user action, every action.
-  # Default: `true`
-  #
-  # config.register_last_activity_time =
+    # Will register the time of last user action, every action.
+    # Default: `true`
+    #
+    # config.register_last_activity_time =
 
-  # -- external --
-  # What providers are supported by this app
-  # i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce, :slack, :line].
-  # Default: `[]`
-  #
+    # -- external --
+    # What providers are supported by this app
+    # i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce, :slack, :line].
+    # Default: `[]`
+    #
     config.external_providers =  %i[line]
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
   # Path to ca_file. By default use a internal ca-bundle.crt.
@@ -227,10 +227,10 @@ Rails.application.config.sorcery.configure do |config|
 
   config.line.key = Rails.application.credentials.dig(:line, :channel_id)
   config.line.secret = Rails.application.credentials.dig(:line, :channel_secret)
-  config.line.callback_url = 'https://style-love.net/oauth/callback?provider=line'
-  config.line.scope = 'profile'
+  config.line.callback_url = "https://style-love.net/oauth/callback?provider=line"
+  config.line.scope = "profile"
   config.line.bot_prompt = "aggressive"
-  config.line.user_info_mapping = {name: 'displayName', email: 'userId' }
+  config.line.user_info_mapping = { name: "displayName", email: "userId" }
 
   # For information about Discord API
   # https://discordapp.com/developers/docs/topics/oauth2

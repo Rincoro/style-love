@@ -52,8 +52,8 @@ group :development, :test do
    gem "rubocop-rails", require: false
    gem "rubocop-rspec", require: false
 
-   gem 'rspec-rails'
-  gem 'factory_bot_rails'
+   gem "rspec-rails"
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -86,6 +86,6 @@ gem "mini_magick"
 
 gem "meta-tags"
 
-gem 'omniauth-auth0'
-gem 'omniauth-line'
-gem 'omniauth-rails_csrf_protection'
+gem "omniauth-auth0"
+gem "omniauth-line"
+gem "omniauth-rails_csrf_protection"
