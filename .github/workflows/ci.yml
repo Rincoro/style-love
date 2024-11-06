@@ -36,6 +36,10 @@ jobs:
         cp config/database.yml.ci config/database.yml
         RAILS_ENV=test bin/rails db:create db:schema:load
 
+    - name: Precompile assets
+      run: |
+        RAILS_ENV=test bundle exec rake assets:precompile
+
     - name: Run RuboCop
       run: |
         bundle exec rubocop
