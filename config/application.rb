@@ -15,6 +15,9 @@ module Myapp
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
      config.time_zone = "Tokyo"
+     config.time_zone = 'Tokyo'
+     config.active_storage.variant_processor = :mini_magick
+
 
      config.active_storage.variant_processor = :mini_magick
 
