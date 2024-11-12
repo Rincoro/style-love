@@ -47,4 +47,3 @@ https://style-love.fly.dev/
 
 # ER図
 [![Image from Gyazo](https://i.gyazo.com/478794509b4517bddd9368548b370a5c.png)](https://gyazo.com/478794509b4517bddd9368548b370a5c)
-
