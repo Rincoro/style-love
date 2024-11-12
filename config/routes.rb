@@ -10,6 +10,8 @@ post "oauth/callback" => "oauths#callback"
 get "oauth/callback" => "oauths#callback"
 get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 get "oauths/oauth", to: "oauths#oauth", as: :oauths_oauth
+get "terms", to: "pages#terms"
+get "privacy", to: "pages#privacy"
 
   get "up" => "rails/health#show", as: :rails_health_check
   resources :users, only: %i[new create]
