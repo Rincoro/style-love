@@ -75,7 +75,7 @@ gem "enum_help"
 gem "image_processing", "~> 1.2"
 gem "kaminari"
 
-gem "kaminari"
+
 gem "mini_magick"
 
 gem "cocoon"
@@ -89,3 +89,4 @@ gem "meta-tags"
 gem "omniauth-auth0"
 gem "omniauth-line"
 gem "omniauth-rails_csrf_protection"
+gem "high_voltage"
