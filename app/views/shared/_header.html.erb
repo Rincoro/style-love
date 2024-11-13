@@ -10,7 +10,7 @@
         <%= link_to "コーデ投稿", new_article_path, class: "m-2" %>
         <%= link_to t('bookmarks.title'), bookmarks_articles_path, class: 'nav-link m-2' %>
         <%= link_to "プロフィール", profile_path(@user), class: 'nav-link 2' %>
-        <%= link_to t('user_sessions.logout'),logout_path, data: { turbo_method: :delete, } %>
+        <%= link_to t('user_sessions.logout'),logout_path, data: { turbo_method: :delete }, class: "m-2"%>
         </div>
       </div>
     </header>
