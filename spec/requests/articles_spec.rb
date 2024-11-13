@@ -35,7 +35,7 @@ RSpec.describe "Articles", type: :system do
       it 'new_article_path' do
         login(user)
         visit new_article_path
-        expect(page).to have_text("推しのジャンルを決めよう!")
+        expect(page).to have_text("推しのジャンルを決めよう！")
       end
     end
 
