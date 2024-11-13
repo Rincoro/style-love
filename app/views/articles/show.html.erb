@@ -49,8 +49,8 @@
             <table class="table text-center mx-auto">
               <% if @comments.present? %>
                 <% @comments.each do |comment|%>
-                  <%= turbo_frame_tag dom_id(comment) do %>
-                  <%= render 'articles/comment', comment: comment %>
+                  <%= turbo_frame_tag dom_id(comment) do %>                  <%= render 'articles/comment', comment: comment %>
+                  </div>
                   <%end%>
                 <% end %>
               <% else %>

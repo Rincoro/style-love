@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
     @article.user_id = current_user.id
     if @article.save
       flash[:success] = "投稿に成功しました"
-      redirect_to root_path
+      redirect_to articles_path
     else
       flash[:alert] = "投稿に失敗しました"
       render :new, status: :unprocessable_entity
