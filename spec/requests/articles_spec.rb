@@ -7,7 +7,6 @@ RSpec.describe "Articles", type: :system do
   let!(:user) { build(:user) }
   let!(:article) { create(:article) }
   describe 'ログイン前' do
-
     context 'コーデ投稿ページへ' do
       it 'new_article_path' do
         visit new_article_path
