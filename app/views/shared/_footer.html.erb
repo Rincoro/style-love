@@ -2,11 +2,11 @@
 <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
     <footer class="flex items-center justify-center py-4 md:py-7">
       <div class="flex justify-center text-center gap-4">
-        <div class="text-white">お問い合わせ</div>
+        <div class="text-white"> <%= t('footer.inquiry') %></div>
         <div class="text-white">
-        <%= link_to "プライバシーポリシー", page_path('privacy') %></div>
+        <%= link_to t('footer.privacy'), page_path('privacy') %></div>
         <div class="text-white">
-        <%= link_to "利用規約", page_path('terms') %>
+        <%= link_to t('footer.terms'), page_path('terms') %>
         </div>
       </div>
     </footer>

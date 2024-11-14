@@ -1,7 +1,7 @@
 <div class="mt-8">
   <div class="w-10/12 mx-auto md:max-w-md">
-    <h1 class= "p-2 g-col-6">
-    ユーザー登録
+    <h1 class= "p-2 g-col-6 font-semibold text-2xl  text-center">
+    <%= t('users.new.title') %>
     </h1>
     <%= form_with model: @user  do |f| %>
       <%= render 'shared/error_messages', object: f.object %>

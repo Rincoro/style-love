@@ -1,8 +1,8 @@
 
 <div class="mt-8">
   <div class="w-10/12 mx-auto md:max-w-md">
-    <h1 class= "p-2 g-col-6">
-      ログイン
+    <h1 class= "p-2 g-col-6 font-semibold text-2xl  text-center">
+      <%= t('user_sessions.new.title') %>
     </h1>
     <%= form_with model: @user  do |f| %>
         <%= f.label :email %>
@@ -12,7 +12,7 @@
         <%= f.password_field :password, class: 'w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-pink-500 placeholder-gray-500 placeholder-opacity-50 bg-white' %>
 
       <button class="bg-gray-400 hover:bg-gray-600 text-white rounded px-4 py-2 m-3">
-      <%= f.submit 'ログイン' %>
+      <%= f.submit t('user_sessions.new.login') %>
       </button>
     <% end %>
     </div>

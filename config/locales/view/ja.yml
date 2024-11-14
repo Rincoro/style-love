@@ -30,11 +30,19 @@ ja:
   header:
     login: ログイン
     logout: ログアウト
-    board: 掲示板
-    board_index: 掲示板一覧
-    create_board: 掲示板作成
     bookmark_index: ブックマーク一覧
     profile: プロフィール
+    title: Style-LOVE
+    login: ログイン
+    line: LINEでログイン
+    user: 新規ユーザー登録
+    index: コーデ一覧
+    create: コーデ投稿
+    profile: プロフィール
+  footer:
+    inquiry: お問い合わせ
+    privacy: プライバシーポリシー
+    terms: 利用規約
   pagination:
       first: 最初へ
       previous: 前へ
@@ -42,4 +50,12 @@ ja:
   bookmarks:
     title: ブックマーク一覧
     no_result: ブックマーク中の掲示板がありません。
+  profile:
+    edit: プロフィール編集
+  button:
+    edit: 編集
+    delete: 削除
+    post: 投稿
+
+  
       
