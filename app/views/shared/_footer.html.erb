@@ -8,6 +8,11 @@
         <div class="text-white">
         <%= link_to t('footer.terms'), page_path('terms') %>
         </div>
+        <div class="text-white">
+        <%= link_to  "https://twitter.com/share?url=#{CGI.escape('https://style-love.net/')}&text=#{CGI.escape('推し活コーデ投稿サービス')}&hashtags=Style-LOVE", target: "_blank", rel: "noopener noreferrer", title: "Xでシェアする" do %>
+        <i class="fa-brands fa-x-twitter "></i>
+        <% end %>
+        </div>    
       </div>
     </footer>
   </div>
