@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "password_resets/create"
+  get "password_resets/edit"
+  get "password_resets/update"
 # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 root "pages#top"
 get "login", to: "user_sessions#new"
@@ -25,7 +28,7 @@ get "privacy", to: "pages#privacy"
     resources :comments, only: %i[new create destroy edit update]
     resources :attachments, controller: "articles/attachments", only: %i[destroy]
   end
-
+  resources :password_resets, only: [ :new, :create, :edit, :update ]
   resources :bookmarks, only: %i[create destroy]
   resource :profile, only: %i[show edit update]
 
