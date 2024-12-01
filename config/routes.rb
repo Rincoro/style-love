@@ -28,7 +28,7 @@ get "privacy", to: "pages#privacy"
     resources :comments, only: %i[new create destroy edit update]
     resources :attachments, controller: "articles/attachments", only: %i[destroy]
   end
-  resources :password_resets, only: [:new, :create, :edit, :update]
+  resources :password_resets, only: [ :new, :create, :edit, :update ]
   resources :bookmarks, only: %i[create destroy]
   resource :profile, only: %i[show edit update]
 

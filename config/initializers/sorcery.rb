@@ -4,7 +4,7 @@
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging,
 # :magic_login, :external
-Rails.application.config.sorcery.submodules = [:external, :reset_password]
+Rails.application.config.sorcery.submodules = [ :external, :reset_password ]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
@@ -289,124 +289,124 @@ Rails.application.config.sorcery.configure do |config|
     #
     user.stretches = 1 if Rails.env.test?
 
-    # Encryption key used to encrypt reversible encryptions such as AES256.
-    # WARNING: If used for users' passwords, changing this key will leave passwords undecryptable!
-    # Default: `nil`
-    #
-    # user.encryption_key =
+     # Encryption key used to encrypt reversible encryptions such as AES256.
+     # WARNING: If used for users' passwords, changing this key will leave passwords undecryptable!
+     # Default: `nil`
+     #
+     # user.encryption_key =
 
-    # Use an external encryption class.
-    # Default: `nil`
-    #
-    # user.custom_encryption_provider =
+     # Use an external encryption class.
+     # Default: `nil`
+     #
+     # user.custom_encryption_provider =
 
-    # Encryption algorithm name. See 'encryption_algorithm=' for available options.
-    # Default: `:bcrypt`
-    #
-    # user.encryption_algorithm =
+     # Encryption algorithm name. See 'encryption_algorithm=' for available options.
+     # Default: `:bcrypt`
+     #
+     # user.encryption_algorithm =
 
-    # Make this configuration inheritable for subclasses. Useful for ActiveRecord's STI.
-    # Default: `false`
-    #
-    # user.subclasses_inherit_config =
+     # Make this configuration inheritable for subclasses. Useful for ActiveRecord's STI.
+     # Default: `false`
+     #
+     # user.subclasses_inherit_config =
 
-    # -- remember_me --
-    # change default remember_me_token attribute.
-    # Default: `:remember_me_token`
-    #
-    # user.remember_me_token_attribute_name =
+     # -- remember_me --
+     # change default remember_me_token attribute.
+     # Default: `:remember_me_token`
+     #
+     # user.remember_me_token_attribute_name =
 
-    # change default remember_me_token_expires_at attribute.
-    # Default: `:remember_me_token_expires_at`
-    #
-    # user.remember_me_token_expires_at_attribute_name =
+     # change default remember_me_token_expires_at attribute.
+     # Default: `:remember_me_token_expires_at`
+     #
+     # user.remember_me_token_expires_at_attribute_name =
 
-    # How long in seconds the session length will be
-    # Default: `60 * 60 * 24 * 7`
-    #
-    # user.remember_me_for =
+     # How long in seconds the session length will be
+     # Default: `60 * 60 * 24 * 7`
+     #
+     # user.remember_me_for =
 
-    # When true, sorcery will persist a single remember me token for all
-    # logins/logouts (to support remembering on multiple browsers simultaneously).
-    # Default: false
-    #
-    # user.remember_me_token_persist_globally =
+     # When true, sorcery will persist a single remember me token for all
+     # logins/logouts (to support remembering on multiple browsers simultaneously).
+     # Default: false
+     #
+     # user.remember_me_token_persist_globally =
 
-    # -- user_activation --
-    # The attribute name to hold activation state (active/pending).
-    # Default: `:activation_state`
-    #
-    # user.activation_state_attribute_name =
+     # -- user_activation --
+     # The attribute name to hold activation state (active/pending).
+     # Default: `:activation_state`
+     #
+     # user.activation_state_attribute_name =
 
-    # The attribute name to hold activation code (sent by email).
-    # Default: `:activation_token`
-    #
-    # user.activation_token_attribute_name =
+     # The attribute name to hold activation code (sent by email).
+     # Default: `:activation_token`
+     #
+     # user.activation_token_attribute_name =
 
-    # The attribute name to hold activation code expiration date.
-    # Default: `:activation_token_expires_at`
-    #
-    # user.activation_token_expires_at_attribute_name =
+     # The attribute name to hold activation code expiration date.
+     # Default: `:activation_token_expires_at`
+     #
+     # user.activation_token_expires_at_attribute_name =
 
-    # How many seconds before the activation code expires. nil for never expires.
-    # Default: `nil`
-    #
-    # user.activation_token_expiration_period =
+     # How many seconds before the activation code expires. nil for never expires.
+     # Default: `nil`
+     #
+     # user.activation_token_expiration_period =
 
-    # REQUIRED:
-    # User activation mailer class.
-    # Default: `nil`
-    #
-    # user.user_activation_mailer =
+     # REQUIRED:
+     # User activation mailer class.
+     # Default: `nil`
+     #
+     # user.user_activation_mailer =
 
-    # When true, sorcery will not automatically
-    # send the activation details email, and allow you to
-    # manually handle how and when the email is sent.
-    # Default: `false`
-    #
-    # user.activation_mailer_disabled =
+     # When true, sorcery will not automatically
+     # send the activation details email, and allow you to
+     # manually handle how and when the email is sent.
+     # Default: `false`
+     #
+     # user.activation_mailer_disabled =
 
-    # Method to send email related
-    # options: `:deliver_later`, `:deliver_now`, `:deliver`
-    # Default: :deliver (Rails version < 4.2) or :deliver_now (Rails version 4.2+)
-    #
-    # user.email_delivery_method =
+     # Method to send email related
+     # options: `:deliver_later`, `:deliver_now`, `:deliver`
+     # Default: :deliver (Rails version < 4.2) or :deliver_now (Rails version 4.2+)
+     #
+     # user.email_delivery_method =
 
-    # Activation needed email method on your mailer class.
-    # Default: `:activation_needed_email`
-    #
-    # user.activation_needed_email_method_name =
+     # Activation needed email method on your mailer class.
+     # Default: `:activation_needed_email`
+     #
+     # user.activation_needed_email_method_name =
 
-    # Activation success email method on your mailer class.
-    # Default: `:activation_success_email`
-    #
-    # user.activation_success_email_method_name =
+     # Activation success email method on your mailer class.
+     # Default: `:activation_success_email`
+     #
+     # user.activation_success_email_method_name =
 
-    # Do you want to prevent users who did not activate by email from logging in?
-    # Default: `true`
-    #
-    # user.prevent_non_active_users_to_login =
+     # Do you want to prevent users who did not activate by email from logging in?
+     # Default: `true`
+     #
+     # user.prevent_non_active_users_to_login =
 
-    # -- reset_password --
-    # Password reset token attribute name.
-    # Default: `:reset_password_token`
-    #
-    # user.reset_password_token_attribute_name =
+     # -- reset_password --
+     # Password reset token attribute name.
+     # Default: `:reset_password_token`
+     #
+     # user.reset_password_token_attribute_name =
 
-    # Password token expiry attribute name.
-    # Default: `:reset_password_token_expires_at`
-    #
-    # user.reset_password_token_expires_at_attribute_name =
+     # Password token expiry attribute name.
+     # Default: `:reset_password_token_expires_at`
+     #
+     # user.reset_password_token_expires_at_attribute_name =
 
-    # When was password reset email sent. Used for hammering protection.
-    # Default: `:reset_password_email_sent_at`
-    #
-    # user.reset_password_email_sent_at_attribute_name =
+     # When was password reset email sent. Used for hammering protection.
+     # Default: `:reset_password_email_sent_at`
+     #
+     # user.reset_password_email_sent_at_attribute_name =
 
-    # REQUIRED:
-    # Password reset mailer class.
-    # Default: `nil`
-    #
+     # REQUIRED:
+     # Password reset mailer class.
+     # Default: `nil`
+     #
      user.reset_password_mailer = UserMailer
 
     # Reset password email method on your mailer class.
