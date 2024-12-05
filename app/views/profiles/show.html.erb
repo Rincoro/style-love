@@ -1,5 +1,5 @@
 <div class="mt-8">
-  <div class="w-10/12 mx-auto md:max-w-md bg-white shadow-lg rounded-lg p-6">
+  <div class="text-left w-10/12  md:max-w-md bg-white shadow-lg rounded-lg p-6 m-8">
 
   <div class="flex items-center justify-center mb-4">
   <% if @user.icon.present? %>
@@ -21,4 +21,12 @@
       </div>
     </div>
   </div>
+
+  <% if @articles.present? %>
+        <div class="grid gap-x-4 gap-y-6  sm:grid-cols-2 md:gap-x-6 lg:grid-cols-4 xl:grid-cols-4 m-4">
+          <%= render "profiles/article" %> 
+        </div>
+      <% else %>
+        <p><%= t('articles.index.no_articles') %></p>
+      <% end %>
 </div>

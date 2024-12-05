@@ -15,6 +15,7 @@ class ProfilesController < ApplicationController
 
   def show
     @user = User.find(current_user.id)
+    @articles = Article.profile(current_user)
   end
 
   private
