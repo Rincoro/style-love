@@ -1,7 +1,15 @@
+
 <% @articles.each do |article| %>
-
-<%= article.title %>
-
-
-<% end %>
-
+    <div> 
+      <div class="group block h-96 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:mb-3 justify-center ">
+        <% if article.image.attached? %>
+          <%= link_to article_path(article.id) do %>
+            <%= image_tag article.image_webp, class: "h-full w-full object-cover object-center transition duration-200" %>
+          <% end %>
+        <% end %>
+      </div>
+      <span class="text-gray-500">
+        <%= article.title %> 
+      </span>
+    </div>
+  <% end %>
