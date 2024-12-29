@@ -1,6 +1,6 @@
 <div class="mt-8">
   <div class="w-10/12 mx-auto md:max-w-md">
-      <%= form_with model: @article do |f| %>
+      <%= form_with model: @article, id: 'article_form' do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <div class="mb-3">
           <%= f.label :title %>
@@ -35,6 +35,14 @@
           </label>
       </div>
 
+      <div id="previews_image" class="">
+      <% if @article.persisted? && @article.image.attached? %>
+          <div class="preview">
+              <%= image_tag @article.image, class: "preview-image" %>
+          </div>
+      <% end %>
+     </div>
+
       <div class ="items", id = "table-comment">
         <div class="item-form-area m-2">
           <%= f.fields_for :items do |item| %>
@@ -59,4 +67,5 @@
     </div> 
   </div>
 </div>
+
 
