@@ -7,4 +7,3 @@ import './cocoon'
 import './preview'
 import "@hotwired/turbo-rails"
 import "./controllers"
-
